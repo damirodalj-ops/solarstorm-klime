@@ -24,6 +24,17 @@ Kontakt (adresa, telefon, e-pošta) upisan je u `index.html` i `pravne.html`. Gu
 
 Kartica pokazuje sliku, seriju, model, snagu hlađenja i kratko obilježje. Cijena nije navedena. Jamstvo na karticama: 5 godina za sve brendove.
 
+
+## Izdvojeni modeli
+
+U sekciji Izdvojeni modeli prikazuju se do tri modela za reklamiranje. Odabir je na jednom mjestu, na vrhu datoteke `js/main.js`, u polju `FEATURED_MODELS`. Iznad polja stoji komentar „OVDJE ODABERI IZDVOJENE MODELE“.
+
+Upiši ID-eve modela točno kako pišu u atributu `data-model` na karticama u odjeljku Brendovi (npr. `TT37AF-1232IAW`). Redoslijed u polju je redoslijed prikaza. Preporuka je jedan model iz različitih brendova. HTML izdvojenih kartica nije potrebno dirati: slika, naziv, snaga i značajke preuzimaju se s postojeće kartice.
+
+Gumb „Zatražite ponudu“ na izdvojenoj kartici otvara obrazac i predodabere taj model.
+
+Privremeni odabir (treba Damirovu potvrdu): Tesla Virtuoso TT37AF-1232IAW, Toshiba DaiSeiKai 10 Wood RAS-B13S4KVDG-E i Haier Expert Nordic AS35XCHHRA-NR.
+
 ## Pravne stranice
 
 `pravne.html` ima prazne odjeljke Uvjeti, Privatnost i Kolačići. Trenutačna stranica ne postavlja kolačiće. Tekstove upisuje vlasnik; nemojte ostaviti predložak na javnoj adresi.

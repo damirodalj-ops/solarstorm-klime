@@ -1,4 +1,23 @@
 (function () {
+  // ---------------------------------------------------------------------------
+  // OVDJE ODABERI IZDVOJENE MODELE
+  //
+  // Upiši ID-eve modela (atribut data-model na karticama u odjeljku Brendovi).
+  // Redoslijed u polju je redoslijed prikaza u sekciji Izdvojeni modeli.
+  // Preporuka: do tri modela, iz različitih brendova. Promjena vrijedi odmah;
+  // HTML izdvojenih kartica nije potrebno dirati.
+  //
+  // Privremeni odabir (Damir treba potvrditi):
+  //   1. Tesla Virtuoso — TT37AF-1232IAW
+  //   2. Toshiba DaiSeiKai 10 Wood — RAS-B13S4KVDG-E
+  //   3. Haier Expert Nordic — AS35XCHHRA-NR
+  // ---------------------------------------------------------------------------
+  var FEATURED_MODELS = [
+    "TT37AF-1232IAW",
+    "RAS-B13S4KVDG-E",
+    "AS35XCHHRA-NR"
+  ];
+
   var header = document.querySelector(".site-header");
   var burger = document.querySelector("[data-burger]");
   var scrim = document.querySelector("[data-scrim]");
@@ -46,42 +65,149 @@
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var rotator = document.querySelector("[data-hero-rotator]");
-  if (rotator) {
-    var slides = Array.prototype.slice.call(rotator.querySelectorAll("[data-hero-slide]"));
-    var dots = Array.prototype.slice.call(rotator.querySelectorAll("[data-hero-dot]"));
-    var toggle = rotator.querySelector("[data-hero-toggle]");
-    var caption = rotator.querySelector("[data-hero-caption]");
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function featureList(text) {
+    return text.split(",").map(function (part) {
+      return part.replace(/\.$/, "").trim();
+    }).filter(Boolean).slice(0, 3);
+  }
+
+  function buildFeatured() {
+    var track = document.querySelector("[data-featured-track]");
+    if (!track) return [];
+    track.innerHTML = "";
+    var cards = [];
+    FEATURED_MODELS.forEach(function (id, index) {
+      var source = document.querySelector('.model-card[data-model="' + id + '"]');
+      if (!source) return;
+      var brand = source.getAttribute("data-brand") || "";
+      var img = source.querySelector("img");
+      var seriesEl = source.querySelector(".model-card__series");
+      var nameEl = source.querySelector("h4");
+      var powerEl = source.querySelector(".model-card__power");
+      var featEl = source.querySelector(".model-card__feat");
+      var series = seriesEl ? seriesEl.textContent.trim() : "";
+      var name = nameEl ? nameEl.textContent.trim() : id;
+      var power = powerEl ? powerEl.textContent.trim() : "";
+      var feats = featureList(featEl ? featEl.textContent : "");
+      var label = (brand + " " + series + " " + name).replace(/\s+/g, " ").trim();
+      var featsHtml = feats.map(function (f) {
+        return "<li>" + escapeHtml(f) + "</li>";
+      }).join("");
+      var li = document.createElement("li");
+      li.className = "featured-card";
+      li.innerHTML =
+        '<figure class="featured-card__photo">' +
+          (img
+            ? '<img src="' + escapeHtml(img.getAttribute("src")) + '" width="' + (img.getAttribute("width") || "") + '" height="' + (img.getAttribute("height") || "") + '" alt="' + escapeHtml(img.getAttribute("alt") || label) + '"' + (index === 0 ? ' fetchpriority="high"' : ' loading="lazy"') + ">"
+            : "") +
+        "</figure>" +
+        '<div class="featured-card__body">' +
+          '<span class="featured-card__badge">Izdvojeno</span>' +
+          (brand ? '<p class="featured-card__brand">' + escapeHtml(brand) + "</p>" : "") +
+          "<h3>" + escapeHtml(series || name) + "</h3>" +
+          (series ? '<p class="featured-card__sku">' + escapeHtml(name) + "</p>" : "") +
+          (power ? '<p class="featured-card__power">' + escapeHtml(power) + "</p>" : "") +
+          (featsHtml ? '<ul class="featured-card__feats">' + featsHtml + "</ul>" : "") +
+          '<p class="featured-card__warranty">5 godina jamstva</p>' +
+          '<a class="btn" href="#kontakt" data-inquire-model="' + escapeHtml(label) + '">Zatražite ponudu</a>' +
+        "</div>";
+      track.appendChild(li);
+      cards.push(li);
+    });
+    return cards;
+  }
+
+  var featuredCards = buildFeatured();
+
+  if (featuredCards.length && !reduce && "IntersectionObserver" in window) {
+    var reveal = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          reveal.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    featuredCards.forEach(function (card) { reveal.observe(card); });
+  } else {
+    featuredCards.forEach(function (card) { card.classList.add("is-in"); });
+  }
+
+  var featuredSlider = document.querySelector("[data-featured-slider]");
+  if (featuredSlider && featuredCards.length > 1) {
+    var track = featuredSlider.querySelector("[data-featured-track]");
+    var dotsWrap = featuredSlider.querySelector("[data-featured-dots]");
+    var toggle = featuredSlider.querySelector("[data-featured-toggle]");
     var index = 0;
     var timer = null;
-    var delay = 5000;
+    var delay = 5500;
     var paused = reduce;
+    var dots = [];
 
-    function setCaption(i) {
-      if (!caption || !slides[i]) return;
-      var raw = slides[i].getAttribute("data-caption") || "";
-      var parts = raw.split(" ");
-      var brand = parts.shift() || "";
-      var rest = parts.join(" ");
-      caption.innerHTML = "<strong>" + brand + "</strong> " + rest;
+    function isCarousel() {
+      return window.matchMedia("(max-width: 959px)").matches;
     }
 
-    function setActive(next) {
-      index = next;
-      slides.forEach(function (slide, i) {
-        slide.classList.toggle("is-active", i === next);
-      });
-      dots.forEach(function (dot, i) {
-        var on = i === next;
+    function setActive(i) {
+      index = i;
+      dots.forEach(function (dot, d) {
+        var on = d === i;
         dot.classList.toggle("is-active", on);
         if (on) dot.setAttribute("aria-current", "true");
         else dot.removeAttribute("aria-current");
       });
-      setCaption(next);
     }
 
-    function go(next) {
-      setActive((next + slides.length) % slides.length);
+    function go(next, behavior) {
+      var i = (next + featuredCards.length) % featuredCards.length;
+      if (isCarousel()) {
+        var motion = reduce ? "auto" : (behavior || "smooth");
+        featuredCards[i].scrollIntoView({ behavior: motion, inline: "start", block: "nearest" });
+      }
+      setActive(i);
+    }
+
+    if (dotsWrap) {
+      dotsWrap.innerHTML = "";
+      featuredCards.forEach(function (card, i) {
+        var title = "";
+        var h = card.querySelector("h3");
+        var brand = card.querySelector(".featured-card__brand");
+        if (brand && h) title = brand.textContent.trim() + " " + h.textContent.trim();
+        else if (h) title = h.textContent.trim();
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", "Izdvojeni model " + (i + 1) + (title ? ": " + title : ""));
+        if (i === 0) {
+          btn.className = "is-active";
+          btn.setAttribute("aria-current", "true");
+        }
+        btn.addEventListener("click", function () {
+          go(i);
+          restart();
+        });
+        dotsWrap.appendChild(btn);
+        dots.push(btn);
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      var slideObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || !isCarousel()) return;
+          var i = featuredCards.indexOf(entry.target);
+          if (i >= 0 && i !== index) setActive(i);
+        });
+      }, { root: track, threshold: 0.6 });
+      featuredCards.forEach(function (card) { slideObs.observe(card); });
     }
 
     function stop() {
@@ -92,7 +218,7 @@
     }
 
     function start() {
-      if (paused || reduce || document.hidden || timer || slides.length < 2) return;
+      if (paused || reduce || document.hidden || timer || !isCarousel()) return;
       timer = setInterval(function () { go(index + 1); }, delay);
     }
 
@@ -107,16 +233,9 @@
       toggle.setAttribute("aria-pressed", paused ? "true" : "false");
       toggle.setAttribute(
         "aria-label",
-        paused ? "Pokreni izmjenu slika" : "Pauziraj izmjenu slika"
+        paused ? "Pokreni izmjenu modela" : "Pauziraj izmjenu modela"
       );
     }
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener("click", function () {
-        go(i);
-        restart();
-      });
-    });
 
     if (toggle) {
       toggle.addEventListener("click", function () {
@@ -127,7 +246,14 @@
       });
     }
 
-    rotator.addEventListener("keydown", function (event) {
+    featuredSlider.addEventListener("pointerenter", stop);
+    featuredSlider.addEventListener("pointerleave", start);
+    featuredSlider.addEventListener("focusin", stop);
+    featuredSlider.addEventListener("focusout", function (event) {
+      if (!featuredSlider.contains(event.relatedTarget)) start();
+    });
+    featuredSlider.addEventListener("keydown", function (event) {
+      if (!isCarousel()) return;
       if (event.key === "ArrowRight") {
         event.preventDefault();
         go(index + 1);
@@ -139,12 +265,13 @@
         restart();
       }
     });
-
-    rotator.addEventListener("pointerenter", stop);
-    rotator.addEventListener("pointerleave", start);
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) stop();
       else start();
+    });
+    window.addEventListener("resize", function () {
+      if (!isCarousel()) stop();
+      else restart();
     });
 
     setActive(0);
@@ -229,6 +356,21 @@
     if (slug) showBrand(slug);
   });
 
+  function preselectModel(label) {
+    var fieldWrap = document.getElementById("model-field");
+    var input = document.getElementById("model");
+    var tema = document.getElementById("tema");
+    if (input) input.value = label || "";
+    if (fieldWrap) fieldWrap.hidden = !label;
+    if (tema && label) tema.value = "Prodaja";
+  }
+
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest("[data-inquire-model]");
+    if (!link) return;
+    preselectModel(link.getAttribute("data-inquire-model"));
+  });
+
   document.addEventListener("click", function (event) {
     var link = event.target.closest("[data-tema]");
     if (!link) return;
@@ -294,6 +436,7 @@
     var email = field("email").value.trim();
     var phone = field("telefon").value.trim();
     var tema = field("tema").value;
+    var model = field("model") ? field("model").value.trim() : "";
     var message = field("poruka").value.trim();
     var consent = field("suglasnost").checked;
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -327,6 +470,7 @@
       "E-pošta: " + email,
       "Telefon: " + (phone || "—"),
       "Tema: " + tema,
+      "Model: " + (model || "—"),
       "",
       message
     ].join("\n");
@@ -343,7 +487,7 @@
     }
 
     var href = "mailto:" + target
-      + "?subject=" + encodeURIComponent("Upit: " + tema + " — Klimoteka")
+      + "?subject=" + encodeURIComponent("Upit: " + tema + (model ? " (" + model + ")" : "") + " — Klimoteka")
       + "&body=" + encodeURIComponent(body);
     showStatus("Otvaramo program za e-poštu. Ako se ništa ne dogodi, kopirajte tekst upita.", false);
     if (copyBox) copyBox.hidden = false;

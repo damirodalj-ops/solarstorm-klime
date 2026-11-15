@@ -63,39 +63,26 @@
 
   <main id="sadrzaj">
     <section class="hero" aria-label="Uvod">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <h1>Povoljne klime za cijelu Hrvatsku</h1>
-          <p class="hero__sub">Dostava u cijelu Hrvatsku, ugradnja u Zagrebu i okolici</p>
-          <a class="btn" href="#kontakt">Zatražite ponudu</a>
+      <div class="container hero__copy">
+        <h1>Povoljne klime za cijelu Hrvatsku</h1>
+        <p class="hero__sub">Dostava u cijelu Hrvatsku, ugradnja u Zagrebu i okolici</p>
+        <a class="btn" href="#kontakt">Zatražite ponudu</a>
+      </div>
+    </section>
+
+    <section class="featured" id="izdvojeno" aria-labelledby="izdvojeno-naslov">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="izdvojeno-naslov">Izdvojeni modeli</h2>
         </div>
-        <div class="hero__visual" data-hero-rotator>
-          <div class="hero__stage" aria-live="polite">
-            <figure class="is-active" data-hero-slide data-caption="Tesla Virtuoso"><img src="images/models/tesla-tt37af.webp" width="912" height="415" alt="Klima uređaj Tesla Virtuoso." fetchpriority="high"></figure>
-            <figure data-hero-slide data-caption="Toshiba Shorai Edge Black"><img src="images/models/toshiba-shorai-edge-black.webp" width="733" height="353" alt="Klima uređaj Toshiba Shorai Edge Black." loading="lazy"></figure>
-            <figure data-hero-slide data-caption="Haier Flexis Plus"><img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Klima uređaj Haier Flexis Plus." loading="lazy"></figure>
-            <figure data-hero-slide data-caption="Maxon Fresh"><img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Klima uređaj Maxon Fresh." loading="lazy"></figure>
-            <figure data-hero-slide data-caption="Tesla Advance"><img src="images/models/tesla-tt51tp81.webp" width="597" height="274" alt="Klima uređaj Tesla Advance." loading="lazy"></figure>
-            <figure data-hero-slide data-caption="Toshiba DaiSeiKai 10 Wood"><img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Klima uređaj Toshiba DaiSeiKai 10 Wood." loading="lazy"></figure>
-            <figure data-hero-slide data-caption="Haier Expert Nordic"><img src="images/models/haier-expert-nordic.webp" width="912" height="382" alt="Klima uređaj Haier Expert Nordic." loading="lazy"></figure>
-            <figure data-hero-slide data-caption="Haier Pearl Premium"><img src="images/models/haier-pearl-premium.webp" width="912" height="463" alt="Klima uređaj Haier Pearl Premium." loading="lazy"></figure>
-          </div>
-          <p class="hero__caption" data-hero-caption><strong>Tesla</strong> Virtuoso</p>
-          <div class="hero__controls">
-            <button class="hero__toggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pauziraj izmjenu slika">
+        <div class="featured__slider" data-featured-slider>
+          <ul class="featured__track" data-featured-track></ul>
+          <div class="featured__controls">
+            <button class="featured__toggle" type="button" data-featured-toggle aria-pressed="false" aria-label="Pauziraj izmjenu modela">
               <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
               <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2.5v11l10-5.5z"/></svg>
             </button>
-            <div class="hero__dots" role="group" aria-label="Odabir modela">
-            <button type="button" data-hero-dot class="is-active" aria-current="true" aria-label="Tesla Virtuoso"></button>
-            <button type="button" data-hero-dot aria-label="Toshiba Shorai Edge Black"></button>
-            <button type="button" data-hero-dot aria-label="Haier Flexis Plus"></button>
-            <button type="button" data-hero-dot aria-label="Maxon Fresh"></button>
-            <button type="button" data-hero-dot aria-label="Tesla Advance"></button>
-            <button type="button" data-hero-dot aria-label="Toshiba DaiSeiKai 10 Wood"></button>
-            <button type="button" data-hero-dot aria-label="Haier Expert Nordic"></button>
-            <button type="button" data-hero-dot aria-label="Haier Pearl Premium"></button>
-            </div>
+            <div class="featured__dots" data-featured-dots role="group" aria-label="Odabir izdvojenog modela"></div>
           </div>
         </div>
       </div>
@@ -115,7 +102,7 @@
       <div class="container">
         <div class="section__head">
           <h2 id="brendovi-naslov">Brendovi</h2>
-          <p>Tesla, Toshiba, Haier i Maxon. Na svim uređajima stoji 5 godina garancije.</p>
+          <p>Tesla, Toshiba, Haier i Maxon.</p>
         </div>
         <div class="brand-picks" role="tablist" aria-label="Odabir brenda">
             <button class="brand-pick" type="button" role="tab" id="tab-tesla" aria-controls="brend-tesla" aria-selected="true" data-brand-tab="tesla">
@@ -138,10 +125,10 @@
           <div class="brand-panel" id="brend-tesla" role="tabpanel" aria-labelledby="tab-tesla" data-brand-panel="tesla">
             <div class="brand-panel__intro">
               <h3>Tesla</h3>
-              <p>Klima uređaji brenda Tesla za stan i manje poslovne prostore. Točan model dogovaramo u ponudi. Jamstvo: 5 godina.</p>
+              <p>5 godina jamstva.</p>
             </div>
             <ul class="model-grid">
-                  <li class="model-card">
+                  <li class="model-card" data-model="TA36FFCL-1232IAW" data-brand="Tesla">
                     <figure class="model-card__photo">
                       <img src="images/models/tesla-ta36ffcl.webp" width="912" height="415" alt="Unutarnja jedinica Tesla Select TA36FFCL-1232IAW." loading="lazy">
                     </figure>
@@ -153,7 +140,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="TT37AF-1232IAW" data-brand="Tesla">
                     <figure class="model-card__photo">
                       <img src="images/models/tesla-tt37af.webp" width="912" height="415" alt="Unutarnja jedinica Tesla Virtuoso TT37AF-1232IAW s FreshAIR O2." loading="lazy">
                     </figure>
@@ -165,7 +152,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="TA53FFUL-1832IAW" data-brand="Tesla">
                     <figure class="model-card__photo">
                       <img src="images/models/tesla-ta53fful.webp" width="912" height="401" alt="Unutarnja jedinica Tesla Select TA53FFUL-1832IAW." loading="lazy">
                     </figure>
@@ -177,7 +164,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="TT51TP81-1832IHWT" data-brand="Tesla">
                     <figure class="model-card__photo">
                       <img src="images/models/tesla-tt51tp81.webp" width="597" height="274" alt="Unutarnja jedinica Tesla Advance TT51TP81-1832IHWT." loading="lazy">
                     </figure>
@@ -189,7 +176,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="TT68TP21-2432IAW" data-brand="Tesla">
                     <figure class="model-card__photo">
                       <img src="images/models/tesla-tt68tp21.webp" width="912" height="416" alt="Unutarnja jedinica Tesla TT68TP21-2432IAW." loading="lazy">
                     </figure>
@@ -206,10 +193,10 @@
           <div class="brand-panel" id="brend-toshiba" role="tabpanel" aria-labelledby="tab-toshiba" data-brand-panel="toshiba" hidden>
             <div class="brand-panel__intro">
               <h3>Toshiba</h3>
-              <p>Klima uređaji brenda Toshiba. Odabir ovisi o prostoru i načinu korištenja. Jamstvo: 5 godina.</p>
+              <p>5 godina jamstva.</p>
             </div>
             <ul class="model-grid">
-                  <li class="model-card">
+                  <li class="model-card" data-model="RAS-B10S4KVDG-E" data-brand="Toshiba">
                     <figure class="model-card__photo">
                       <img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
                     </figure>
@@ -221,7 +208,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="RAS-B13S4KVDG-E" data-brand="Toshiba">
                     <figure class="model-card__photo">
                       <img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
                     </figure>
@@ -233,7 +220,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="RAS-B18S4KVDG-E" data-brand="Toshiba">
                     <figure class="model-card__photo">
                       <img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
                     </figure>
@@ -245,7 +232,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="RAS-B24G3KVSGB-E" data-brand="Toshiba">
                     <figure class="model-card__photo">
                       <img src="images/models/toshiba-shorai-edge-black.webp" width="733" height="353" alt="Unutarnja jedinica Toshiba Shorai Edge Black." loading="lazy">
                     </figure>
@@ -262,10 +249,10 @@
           <div class="brand-panel" id="brend-haier" role="tabpanel" aria-labelledby="tab-haier" data-brand-panel="haier" hidden>
             <div class="brand-panel__intro">
               <h3>Haier</h3>
-              <p>Klima uređaji brenda Haier za dom i poslovni prostor. Točan model dogovaramo u ponudi. Jamstvo: 5 godina.</p>
+              <p>5 godina jamstva.</p>
             </div>
             <ul class="model-grid">
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS25RBAHRA-PL" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-revive-plus.webp" width="912" height="397" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
                     </figure>
@@ -277,7 +264,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS25S2SF1FA-BH" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
                     </figure>
@@ -289,7 +276,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS35RBAHRA-PL" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-revive-plus.webp" width="912" height="397" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
                     </figure>
@@ -301,7 +288,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS35XCHHRA-NR" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-expert-nordic.webp" width="912" height="382" alt="Unutarnja jedinica Haier Expert Nordic." loading="lazy">
                     </figure>
@@ -313,7 +300,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS50RCBHRA-PL" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-revive-plus.webp" width="912" height="397" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
                     </figure>
@@ -325,7 +312,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS50S2SF1FA-BH" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
                     </figure>
@@ -337,7 +324,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS71PEPHRA-PRE" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-pearl-premium.webp" width="912" height="463" alt="Unutarnja jedinica Haier Pearl Premium." loading="lazy">
                     </figure>
@@ -349,7 +336,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="AS71S2SF1FA-BH" data-brand="Haier">
                     <figure class="model-card__photo">
                       <img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
                     </figure>
@@ -366,10 +353,10 @@
           <div class="brand-panel" id="brend-maxon" role="tabpanel" aria-labelledby="tab-maxon" data-brand-panel="maxon" hidden>
             <div class="brand-panel__intro">
               <h3>Maxon</h3>
-              <p>Klima uređaji brenda Maxon. Detalje šaljemo uz ponudu, ne na ovoj stranici. Jamstvo: 5 godina.</p>
+              <p>5 godina jamstva.</p>
             </div>
             <ul class="model-grid">
-                  <li class="model-card">
+                  <li class="model-card" data-model="MXI-09HC013i" data-brand="Maxon">
                     <figure class="model-card__photo">
                       <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
@@ -381,7 +368,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="MXI-12HC013i" data-brand="Maxon">
                     <figure class="model-card__photo">
                       <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
@@ -393,7 +380,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="MXI-18HC012i" data-brand="Maxon">
                     <figure class="model-card__photo">
                       <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
@@ -405,7 +392,7 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                  <li class="model-card">
+                  <li class="model-card" data-model="MXI-24HC012i" data-brand="Maxon">
                     <figure class="model-card__photo">
                       <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
@@ -426,7 +413,7 @@
       <div class="container">
         <div class="section__lead">
           <h2 id="ugradnja-naslov">Ugradnja</h2>
-          <p>Ugrađujemo klima uređaje u Zagrebu i okolici. Dostava uređaja ide u cijelu Hrvatsku. Točan model i način ugradnje dogovaramo u ponudi.</p>
+          <p>Ugradnja u Zagrebu i okolici. Dostava u cijelu Hrvatsku.</p>
         </div>
       </div>
     </section>
@@ -446,8 +433,7 @@
         <div class="section__head">
           <h2 id="o-nama-naslov">O nama</h2>
         </div>
-        <p>Klimoteka je trgovina klima uređaja za cijelu Hrvatsku: maloprodaja, veleprodaja i ugradnja. Biramo provjerene brendove i uređaje ugrađujemo pažljivo, uz jasnu ponudu i 5 godina garancije.</p>
-        <p>Najvažniji su nam kvaliteta, zadovoljstvo korisnika i povoljne cijene.</p>
+        <p>Klimoteka je trgovina klima uređaja za cijelu Hrvatsku. Najvažniji su nam kvaliteta, zadovoljstvo korisnika i povoljne cijene. Uz uređaj dobivate 5 godina garancije.</p>
       </div>
     </section>
 
@@ -455,7 +441,7 @@
       <div class="container contact">
         <div class="contact__intro">
           <h2 id="kontakt-naslov">Zatražite ponudu</h2>
-          <p>Napišite treba li vam novi uređaj, ugradnja, servis ili veleprodaja. Obrazac ne šalje podatke na poslužitelj: otvara program za e-poštu na vašem uređaju.</p>
+          <p>Javit ćemo vam se s ponudom.</p>
           <ul class="contact-list">
             <li>
               <span>Adresa</span>
@@ -497,6 +483,10 @@
               </select>
             </div>
           </div>
+          <div class="field" id="model-field" hidden>
+            <label for="model">Model</label>
+            <input id="model" name="model" type="text" readonly>
+          </div>
           <div class="field">
             <label for="poruka">Poruka</label>
             <textarea id="poruka" name="poruka" required></textarea>
@@ -525,6 +515,7 @@
       <div>
         <h2>Istražite</h2>
         <ul>
+          <li><a href="#izdvojeno">Izdvojeni modeli</a></li>
           <li><a href="#brendovi">Brendovi</a></li>
           <li><a href="#ugradnja">Ugradnja</a></li>
           <li><a href="#veleprodaja">Veleprodaja</a></li>
