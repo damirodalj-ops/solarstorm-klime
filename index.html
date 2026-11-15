@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar Storm — prodaja i montaža klima uređaja | Zagreb</title>
+  <meta name="description" content="Solar Storm d.o.o. iz Zagreba prodaje, montira i servisira klima uređaje. Tesla, Mitsubishi, Haier i Maxon. Zatražite ponudu.">
+  <meta name="theme-color" content="#3361ab">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="has-hero">
+  <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+  <header class="site-header" id="siteHeader" data-menu-open="false" data-scrolled="false">
+    <div class="container site-header__bar">
+      <a class="logo" href="index.html" aria-label="Solar Storm, početna">
+        <svg class="logo__mark" viewBox="0 0 36 36" aria-hidden="true">
+          <circle cx="15" cy="14" r="6" fill="#F99D1C"/>
+          <path d="M6 25.5c4.2-3 7.6-3 11.8 0s7.6 3 12.2 0" fill="none" stroke="#3361ab" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M8 30c3.6-2.2 6.6-2.2 10.2 0s6.6 2.2 10.2 0" fill="none" stroke="#9FA1A4" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__word"><span class="logo__solar">Solar</span><span class="logo__storm">Storm</span></span>
+      </a>
+      <nav class="nav-desktop" aria-label="Glavni izbornik">
+        <ul class="nav-desktop__list">
+          <li><a href="index.html" aria-current="page">Početna</a></li>
+          <li><a href="#brendovi">Brendovi</a></li>
+          <li><a href="#usluge">Usluge</a></li>
+          <li><a href="#zasto-mi">Zašto mi</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Izbornik" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <button class="scrim" type="button" tabindex="-1" aria-hidden="true" data-scrim></button>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilni izbornik">
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="#brendovi">Brendovi</a></li>
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#zasto-mi">Zašto mi</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <p class="mobile-menu__note">Zagreb · <span class="token">[TELEFON]</span></p>
+    </nav>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="hero" data-slider aria-roledescription="vrtuljak" aria-label="Istaknute teme">
+      <div class="hero__track" id="heroTrack" data-slider-track tabindex="0" aria-label="Slajdovi, strelice lijevo i desno mijenjaju slajd">
+        <article class="hero__slide" id="slajd-ustedba">
+          <img class="pos-ustedba" src="images/hero-ustedba.jpg" width="1920" height="1280" alt="Vanjska jedinica klima uređaja na bijelom pročelju, vedro plavo nebo." fetchpriority="high">
+          <div class="hero__copy">
+            <h1>Ušteda<br>energije</h1>
+            <p>Hlađenje i grijanje bez suvišne potrošnje.</p>
+            <a class="btn btn--outline" href="#brendovi">Saznajte više</a>
+          </div>
+        </article>
+        <article class="hero__slide" id="slajd-tiho">
+          <img class="pos-tiho" src="images/hero-tiho.jpg" width="1920" height="1280" alt="Bijela unutarnja jedinica klima uređaja ispod stropa.">
+          <div class="hero__copy">
+            <h2>Tiho hlađenje<br>i grijanje</h2>
+            <p>Udobnost koja ostaje u pozadini.</p>
+            <a class="btn btn--outline" href="#usluge">Saznajte više</a>
+          </div>
+        </article>
+        <article class="hero__slide" id="slajd-montaza">
+          <img class="pos-montaza" src="images/hero-montaza.jpg" width="1920" height="1586" alt="Serviser na krovu radi na klimatizacijskoj jedinici.">
+          <div class="hero__copy">
+            <h2>Montaža</h2>
+            <p>Od odabira uređaja do ugradnje u Zagrebu.</p>
+            <a class="btn btn--outline" href="#kontakt">Saznajte više</a>
+          </div>
+        </article>
+      </div>
+      <div class="hero__ui">
+        <button class="hero__toggle" type="button" data-slider-toggle aria-pressed="false" aria-label="Pauziraj automatsku izmjenu slajdova">
+          <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
+          <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2.5v11l10-5.5z"/></svg>
+        </button>
+        <div class="hero__dots" role="group" aria-label="Odabir slajda">
+          <a class="hero__dot is-active" href="#slajd-ustedba" data-slider-dot aria-current="true" aria-label="Slajd 1 od 3: Ušteda energije">1</a>
+          <a class="hero__dot" href="#slajd-tiho" data-slider-dot aria-label="Slajd 2 od 3: Tiho hlađenje i grijanje">2</a>
+          <a class="hero__dot" href="#slajd-montaza" data-slider-dot aria-label="Slajd 3 od 3: Montaža">3</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner" aria-labelledby="prodaja-naslov">
+      <img class="pos-prodaja" src="images/banner-prodaja.jpg" width="1920" height="1282" alt="Suvremeni dnevni boravak s dnevnim svjetlom i garniturom." loading="lazy">
+      <div class="banner__copy">
+        <h2 id="prodaja-naslov">Prodaja</h2>
+        <p>Klima uređaji za stan, kuću i ured. Model biramo prema prostoru, a cijenu šaljemo u ponudi.</p>
+        <a class="btn btn--amber" href="#kontakt" data-tema="Prodaja">Zatražite ponudu</a>
+      </div>
+    </section>
+
+    <section class="section" id="usluge" aria-labelledby="usluge-naslov">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="usluge-naslov">Usluge</h2>
+          <p>Prodaja, montaža, servis i savjetovanje. Jedan upit pokriva ono što vam treba.</p>
+        </div>
+        <div class="tiles">
+          <a class="tile" href="#kontakt" data-tema="Prodaja">
+            <span class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+                <rect x="6" y="11" width="28" height="14" rx="2"/>
+                <path d="M10 17h20M10 21h12" stroke-linecap="round"/>
+                <path d="M14 25v3M26 25v3" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3>Prodaja</h3>
+            <p>Odabir i nabava klima uređaja iz brendova koje vodimo u ponudi.</p>
+          </a>
+          <a class="tile" href="#kontakt" data-tema="Montaža">
+            <span class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 25l10-10"/>
+                <path d="M22.5 12.5l3-3a2.5 2.5 0 013.5 3.5l-3 3"/>
+                <path d="M14.5 24.5l-3 3a2.5 2.5 0 103.5 3.5l3-3"/>
+                <path d="M8 32l4-4"/>
+              </svg>
+            </span>
+            <h3>Montaža</h3>
+            <p>Ugradnja unutarnje i vanjske jedinice te priprema instalacije.</p>
+          </a>
+          <a class="tile" href="#kontakt" data-tema="Servis">
+            <span class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <circle cx="20" cy="20" r="11"/>
+                <path d="M20 13v7l5 3"/>
+              </svg>
+            </span>
+            <h3>Servis</h3>
+            <p>Redovito održavanje i pomoć kad uređaj prestane raditi kako treba.</p>
+          </a>
+          <a class="tile" href="#kontakt" data-tema="Savjetovanje">
+            <span class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+                <path d="M8 12h16a4 4 0 014 4v6a4 4 0 01-4 4H16l-6 4v-4H8a4 4 0 01-4-4v-6a4 4 0 014-4z"/>
+              </svg>
+            </span>
+            <h3>Savjetovanje</h3>
+            <p>Razgovor prije kupnje, prema prostoru i načinu korištenja. Bez obveze.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner banner--right" aria-labelledby="servis-naslov">
+      <img class="pos-rad" src="images/banner-rad.jpg" width="1920" height="2918" alt="Serviser s manometrima kleči uz klimatizacijsku instalaciju." loading="lazy">
+      <div class="banner__copy">
+        <h2 id="servis-naslov">Servis</h2>
+        <p>Pregled, održavanje i otklanjanje kvara. Termin dogovaramo nakon što nam se javite.</p>
+        <a class="btn btn--amber" href="#kontakt" data-tema="Servis">Zatražite ponudu</a>
+      </div>
+    </section>
+
+    <section class="banner" aria-labelledby="savjet-naslov">
+      <img class="pos-savjet" src="images/banner-savjet.jpg" width="1920" height="1280" alt="Svijetli dnevni boravak s velikim prozorima i bijelim namještajem." loading="lazy">
+      <div class="banner__copy">
+        <h2 id="savjet-naslov">Savjetovanje</h2>
+        <p>Prije odluke prolazimo prostor i navike korištenja. Na stranici nema cjenika ni obveze kupnje.</p>
+        <a class="btn btn--amber" href="#kontakt" data-tema="Savjetovanje">Zatražite ponudu</a>
+      </div>
+    </section>
+
+    <!--
+      BRENDOVI — lako preimenovanje
+      Haier još nije potvrđen. Da promijenite brend, uredite karticu s
+      data-brand="haier": naslov, tekst i oznaku "Na potvrdi".
+      Isto ime potražite u README.md.
+    -->
+    <section class="section" id="brendovi" aria-labelledby="brendovi-naslov">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="brendovi-naslov">Brendovi</h2>
+          <p>Tesla, Mitsubishi, Haier i Maxon. Model i iznos ne objavljujemo ovdje — oznaka <span class="token">[CIJENA]</span> čeka unos.</p>
+        </div>
+        <div class="brands">
+          <article class="brand-card" data-brand="tesla">
+            <span class="brand-card__rule" aria-hidden="true"></span>
+            <h3>Tesla</h3>
+            <p>Klima uređaji brenda Tesla za stan i manje poslovne prostore. Točan model dogovaramo u ponudi.</p>
+            <p class="brand-card__price">Cijena: <span class="token">[CIJENA]</span></p>
+            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Tesla</a>
+          </article>
+          <article class="brand-card" data-brand="mitsubishi">
+            <span class="brand-card__rule" aria-hidden="true"></span>
+            <h3>Mitsubishi</h3>
+            <p>Klima uređaji brenda Mitsubishi. Odabir ovisi o prostoru i načinu korištenja.</p>
+            <p class="brand-card__price">Cijena: <span class="token">[CIJENA]</span></p>
+            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Mitsubishi</a>
+          </article>
+          <article class="brand-card" data-brand="haier">
+            <p class="brand-card__flag">Na potvrdi</p>
+            <span class="brand-card__rule" aria-hidden="true"></span>
+            <h3>Haier</h3>
+            <p>Naziv je na potvrdi vlasnika. Karticu preimenujte ako odluka bude drugačija. Opis modela dolazi tek nakon potvrde.</p>
+            <p class="brand-card__price">Cijena: <span class="token">[CIJENA]</span></p>
+            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Haier</a>
+          </article>
+          <article class="brand-card" data-brand="maxon">
+            <span class="brand-card__rule" aria-hidden="true"></span>
+            <h3>Maxon</h3>
+            <p>Klima uređaji brenda Maxon. Detalje šaljemo uz ponudu, ne na ovoj stranici.</p>
+            <p class="brand-card__price">Cijena: <span class="token">[CIJENA]</span></p>
+            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Maxon</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" id="zasto-mi" aria-labelledby="zasto-naslov">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="zasto-naslov">Zašto mi</h2>
+          <p>Solar Storm d.o.o., Zagreb. Prodaja, montaža i servis na jednom mjestu.</p>
+        </div>
+        <div class="reasons">
+          <article class="reason">
+            <span class="reason__num">01</span>
+            <h3>Jedan sugovornik</h3>
+            <p>Odabir, ugradnja i kasniji servis ostaju kod iste tvrtke.</p>
+          </article>
+          <article class="reason">
+            <span class="reason__num">02</span>
+            <h3>Više brendova</h3>
+            <p>U ponudi je više imena, pa odluka ne mora pasti na prvom razgovoru.</p>
+          </article>
+          <article class="reason">
+            <span class="reason__num">03</span>
+            <h3>Savjet prije kupnje</h3>
+            <p>Gledamo prostor i navike, ne gotov cjenik. Kupnja nije uvjet razgovora.</p>
+          </article>
+          <article class="reason">
+            <span class="reason__num">04</span>
+            <h3>Zagreb</h3>
+            <p>Tvrtka je u Zagrebu. Ulicu i broj upisujete umjesto oznake <span class="token">[ADRESA]</span>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt" aria-labelledby="kontakt-naslov">
+      <div class="container contact">
+        <div class="contact__intro">
+          <h2 id="kontakt-naslov">Pošaljite upit</h2>
+          <p>Napišite treba li vam novi uređaj, montaža, servis ili savjet. Obrazac ne šalje podatke na poslužitelj: otvara program za e-poštu na vašem uređaju.</p>
+          <ul class="contact-list">
+            <li>
+              <span>Adresa</span>
+              <strong><span class="token">[ADRESA]</span>, Zagreb, Hrvatska</strong>
+            </li>
+            <li>
+              <span>Telefon</span>
+              <strong><span class="token">[TELEFON]</span></strong>
+            </li>
+            <li>
+              <span>E-pošta</span>
+              <strong><span class="token" id="contact-email">[EMAIL]</span></strong>
+            </li>
+          </ul>
+        </div>
+        <form class="form" data-inquiry novalidate>
+          <div class="form-row form-row--2">
+            <div class="field">
+              <label for="ime">Ime i prezime</label>
+              <input id="ime" name="ime" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">E-pošta</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="form-row form-row--2">
+            <div class="field">
+              <label for="telefon">Telefon <span style="font-weight:400;color:#5c626b">(nije obavezno)</span></label>
+              <input id="telefon" name="telefon" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="tema">Tema upita</label>
+              <select id="tema" name="tema">
+                <option>Prodaja</option>
+                <option>Montaža</option>
+                <option>Servis</option>
+                <option>Savjetovanje</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="poruka">Poruka</label>
+            <textarea id="poruka" name="poruka" required></textarea>
+          </div>
+          <label class="check">
+            <input type="checkbox" name="suglasnost" required>
+            <span>Razumijem da se upit otvara u mom programu za e-poštu i da se ne sprema na poslužitelj.</span>
+          </label>
+          <p class="form-status" data-form-status role="status" hidden></p>
+          <textarea class="form-copy" data-form-copy hidden readonly aria-label="Tekst upita za kopiranje"></textarea>
+          <button class="btn btn--amber" type="button" data-copy hidden>Kopiraj tekst upita</button>
+          <button class="btn btn--amber btn--full" type="submit">Pošaljite upit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="Solar Storm, početna">
+          <svg class="logo__mark" viewBox="0 0 36 36" aria-hidden="true">
+            <circle cx="15" cy="14" r="6" fill="#F99D1C"/>
+            <path d="M6 25.5c4.2-3 7.6-3 11.8 0s7.6 3 12.2 0" fill="none" stroke="#7ea0d8" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M8 30c3.6-2.2 6.6-2.2 10.2 0s6.6 2.2 10.2 0" fill="none" stroke="#9FA1A4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="logo__word"><span class="logo__solar">Solar</span><span class="logo__storm">Storm</span></span>
+        </a>
+        <p>Prodaja i montaža klima uređaja. Solar Storm d.o.o., Zagreb.</p>
+      </div>
+      <div>
+        <h2>Istražite</h2>
+        <ul>
+          <li><a href="#brendovi">Brendovi</a></li>
+          <li><a href="#usluge">Usluge</a></li>
+          <li><a href="#zasto-mi">Zašto mi</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pravno</h2>
+        <ul>
+          <li><a href="pravne.html#uvjeti">Uvjeti korištenja</a></li>
+          <li><a href="pravne.html#privatnost">Pravila privatnosti</a></li>
+          <li><a href="pravne.html#kolacici">Kolačići</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h2>Kontakt</h2>
+        <ul>
+          <li><span>Adresa</span><span><span class="token">[ADRESA]</span>, Zagreb</span></li>
+          <li><span>Telefon</span><span class="token">[TELEFON]</span></li>
+          <li><span>E-pošta</span><span class="token">[EMAIL]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Solar Storm d.o.o.</span>
+      <span>Predložak stranice — oznake u uglatim zagradama treba zamijeniti.</span>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
