@@ -22,7 +22,7 @@ Kontakt (adresa, telefon, e-pošta) upisan je u `index.html` i `pravne.html`. Ka
 
 U odjeljku Brendovi svaki brend ima automatski vrtuljak modela (strelice, točke, listanje prstom na mobitelu, bez vanjskih biblioteka). Kartica pokazuje sliku, seriju, model, snagu hlađenja i kratko obilježje. Cijena nije navedena.
 
-Jamstvo na karticama prati izvor: Haier i Maxon 5 (3+2) godina (Maxon uz registraciju), Toshiba 3 godine, Tesla 36 mjeseci prema tesla.info.
+Jamstvo na karticama: 5 godina za sve brendove (jamstvo Solar Storma, potvrdio Damir 15.11.2026.).
 
 ## Pravne stranice
 
