@@ -1227,3 +1227,19 @@ body.menu-open { overflow: hidden; }
     animation: none !important;
   }
 }
+
+/* Hero slajd 1: izmjena slika modela svih brendova */
+.hero__slide--brands { background: linear-gradient(120deg, #0d2a4a 0%, #1f5f99 55%, #4aa3d8 100%); }
+.hero__slide--brands::after { background: linear-gradient(90deg, rgba(8,14,26,.55) 0%, rgba(8,14,26,.2) 40%, rgba(8,14,26,0) 60%); }
+.brand-rotator { position: absolute; z-index: 2; top: 50%; right: clamp(1rem, 6vw, 7rem); transform: translateY(-50%); width: min(46vw, 640px); aspect-ratio: 16 / 9; }
+.hero__slide .brand-rotator__item img { position: static; width: 100%; height: auto; max-height: 78%; object-fit: contain; filter: drop-shadow(0 18px 30px rgba(0,0,0,.35)); }
+.brand-rotator__item { position: absolute; inset: 0; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; background: rgba(255,255,255,.92); border-radius: 18px; padding: 1.5rem; opacity: 0; animation: brandFade 32s infinite; animation-delay: calc(var(--i) * 4s); }
+.brand-rotator__item figcaption { color: #0d2a4a; font-size: 1.05rem; text-align: center; }
+.brand-rotator__item figcaption strong { display: block; font-size: 1.6rem; font-weight: 900; letter-spacing: -.02em; }
+@keyframes brandFade { 0% { opacity: 0; } 2% { opacity: 1; } 12.5% { opacity: 1; } 14.5% { opacity: 0; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .brand-rotator__item { animation: none; } .brand-rotator__item:first-child { opacity: 1; } }
+@media (max-width: 767px) {
+  .brand-rotator { top: 1.25rem; right: 50%; transform: translateX(50%); width: min(88vw, 420px); }
+  .brand-rotator__item { padding: 1rem; }
+  .brand-rotator__item figcaption strong { font-size: 1.25rem; }
+}
