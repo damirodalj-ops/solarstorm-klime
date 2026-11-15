@@ -80,7 +80,7 @@
   --blue-deep: #24457a;
   --footer: #0b1526;
   --footer-muted: #b9c2d4;
-  --header-h: 64px;
+  --header-h: 84px;
   --container: 1152px;
   --radius: 12px;
   --shadow: 0 1px 3px rgba(26, 29, 35, 0.08), 0 1px 2px rgba(26, 29, 35, 0.05);
@@ -1243,3 +1243,7 @@ body.menu-open { overflow: hidden; }
   .brand-rotator__item { padding: 1rem; }
   .brand-rotator__item figcaption strong { font-size: 1.25rem; }
 }
+
+/* Damirov logo */
+.logo__img { display: block; height: 72px; width: auto; }
+.site-footer .logo__img { height: 60px; background: #fff; border-radius: 10px; padding: 6px 10px; box-sizing: content-box; }
