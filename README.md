@@ -1,8 +1,10 @@
-# Solar Storm
+# Klimoteka
 
-Statička stranica za Solar Storm d.o.o., Zagreb: prodaja, montaža i servis klima uređaja. Sav tekst je na hrvatskom. Nema koraka izgradnje — dovoljni su HTML, CSS i JavaScript.
+Statička stranica trgovine Klimoteka (Solar Storm d.o.o., Sesvete): maloprodaja i veleprodaja klima uređaja te ugradnja u Zagrebu i okolici, s dostavom u cijelu Hrvatsku. Sav tekst je na hrvatskom. Nema koraka izgradnje — dovoljni su HTML, CSS i JavaScript.
 
-Kontaktni podaci su upisani. U odjeljku Brendovi prikazani su odabrani zidni modeli Tesla, Toshiba, Haier i Maxon, sa slikama i kratkim obilježjima iz cjenika odnosno stranica proizvođača. Na stranici nema cijena.
+U odjeljku Brendovi prikazani su odabrani zidni modeli Tesla, Toshiba, Haier i Maxon, sa slikama, nazivom, snagom i opremom iz cjenika odnosno stranica proizvođača. Na stranici nema cijena. Na svim brendovima stoji 5 godina garancije koju daje Solar Storm.
+
+Logo (tri valovite crte zraka uz natpis Klimoteka, petrol #0D4539) stoji u zaglavlju kao SVG. U tamnom podnožju koristi se bijela verzija. Favicon je `favicon.ico`, uz `images/klimoteka-ikona-192.png` i `images/klimoteka-ikona-512.png` za apple-touch-icon.
 
 ## Pokretanje
 
@@ -16,13 +18,11 @@ Zatim otvorite [http://127.0.0.1:8941](http://127.0.0.1:8941).
 
 ## Kontakt i obrazac
 
-Kontakt (adresa, telefon, e-pošta) upisan je u `index.html` i `pravne.html`. Kad je adresa u `#contact-email` ispravna, gumb „Pošaljite upit” otvara program za e-poštu. Podaci se ne šalju na poslužitelj.
+Kontakt (adresa, telefon, e-pošta) upisan je u `index.html` i `pravne.html`. Gumb „Pošaljite upit” otvara program za e-poštu. Podaci se ne šalju na poslužitelj. Upit za veleprodaju ima zaseban mailto s naslovom „Veleprodaja”.
 
 ## Modeli
 
-U odjeljku Brendovi svaki brend ima automatski vrtuljak modela (strelice, točke, listanje prstom na mobitelu, bez vanjskih biblioteka). Kartica pokazuje sliku, seriju, model, snagu hlađenja i kratko obilježje. Cijena nije navedena.
-
-Jamstvo na karticama: 5 godina za sve brendove (jamstvo Solar Storma, potvrdio Damir 15.11.2026.).
+Kartica pokazuje sliku, seriju, model, snagu hlađenja i kratko obilježje. Cijena nije navedena. Jamstvo na karticama: 5 godina za sve brendove.
 
 ## Pravne stranice
 
@@ -30,33 +30,11 @@ Jamstvo na karticama: 5 godina za sve brendove (jamstvo Solar Storma, potvrdio D
 
 ## Objava na GitHub Pages
 
-1. Gurnite ovu granu u GitHub repozitorij.
-2. U repozitoriju otvorite **Settings → Pages**.
-3. Pod **Build and deployment** odaberite **Deploy from a branch**.
-4. Branch: grana s ovim datotekama, mapa **`/ (root)`**.
-5. Spremite. Nakon minutu-dvije stranica je na `https://<korisnik>.github.io/<repo>/`.
-
-Datoteka `.nojekyll` sprječava da Jekyll dira statičke datoteke. Ne treba poseban build.
-
-Ako stranica živi u podmapi (`github.io/ime-repo/`), relativne putanje (`css/styles.css`, `images/…`) i dalje rade. Ne stavljajte kose crte na početak putanja.
-
-Kontaktni podaci su već upisani. Cijene ne stavljajte na stranicu.
+Stranica je namijenjena GitHub Pages repozitoriju `damirodalj-ops/solarstorm-klime`. Datoteka `.nojekyll` sprječava da Jekyll dira statičke datoteke. Relativne putanje (`css/styles.css`, `images/…`) rade i u podmapi. Cijene ne stavljajte na stranicu. Domenu i objavu odobrava vlasnik.
 
 ## Fotografije
 
-Slike su s Pexelsa, licenca Pexels (besplatno korištenje, uključujući komercijalno). Na fotografijama nema logotipa Tesla, Toshiba, Haier ni Maxon.
-
-| Datoteka | Autor | Izvor |
-| --- | --- | --- |
-| `images/hero-ustedba.jpg` | Nevtuğ Yalçın | https://www.pexels.com/photo/39318564/ |
-| `images/hero-tiho.jpg` | NEOSiAM | https://www.pexels.com/photo/38788452/ |
-| `images/hero-montaza.jpg` | José Andrés Pacheco Cortes | https://www.pexels.com/photo/5463587/ |
-| `images/banner-prodaja.jpg` | Max Vakhtbovych | https://www.pexels.com/photo/7546721/ |
-| `images/banner-rad.jpg` | José Andrés Pacheco Cortes | https://www.pexels.com/photo/6471914/ |
-| `images/banner-savjet.jpg` | Barion McQueen | https://www.pexels.com/photo/5002323/ |
-
-
-Slike modela spremljene su u `images/models/`. To su službene fotografije proizvođača ili distributera, smanjene na širinu do 800 px i spremljene kao WebP. Ista fotografija serije koristi se za više snaga iste serije kad proizvođač nema posebnu sliku za svaki kapacitet.
+Životne stock fotografije (Pexels) uklonjene su s redizajna. Slike modela spremljene su u `images/models/`. To su službene fotografije proizvođača ili distributera, smanjene na širinu do 800 px i spremljene kao WebP. Ista fotografija serije koristi se za više snaga iste serije kad proizvođač nema posebnu sliku za svaki kapacitet.
 
 | Datoteka | Izvor |
 | --- | --- |
@@ -73,6 +51,6 @@ Slike modela spremljene su u `images/models/`. To su službene fotografije proiz
 | `images/models/haier-pearl-premium.webp` | https://haierhvac.eu/sites/haierhvac-eu/files/2024-06/Pearl_1.jpg — stranica https://haierhvac.eu/products/residential-light-commercial-monosplit-light-commercial-monosplit/pearl-premium-monosplit |
 | `images/models/maxon-fresh.webp` | Službena fotografija serije Fresh iz cjenika Maxon klima uređaji 2026., MB Frigo, verzija 13. 5. 2026. Ista slika serije za sve četiri prikazane snage. |
 
-## Font
+## Fontovi
 
-Lato (Light 300, Regular 400, Bold 700, Heavy 900) samostalno je poslužen iz `fonts/`. Licenca je SIL Open Font License 1.1, tekst je u `fonts/OFL.txt`. Autori: Łukasz Dziedzic i tim, tyPoland. Rezervirano ime fonta: „Lato”.
+Lato (Light 300, Regular 400, Bold 700, Heavy 900) koristi se za tekst. Space Grotesk (Medium 500, Semibold 600, Bold 700) koristi se za naslove i wordmark. Oba su samostalno poslužena iz `fonts/`, pod licencom SIL Open Font License 1.1. Tekst licence za Lato je u `fonts/OFL.txt`, za Space Grotesk u `fonts/space-grotesk-OFL.txt`. Autori Lata: Łukasz Dziedzic i tim, tyPoland (rezervirano ime: „Lato”). Autori Space Groteska: The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk).

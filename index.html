@@ -3,10 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solar Storm — prodaja i montaža klima uređaja | Zagreb</title>
-  <meta name="description" content="Solar Storm d.o.o. iz Zagreba prodaje, montira i servisira klima uređaje. Tesla, Toshiba, Haier i Maxon. Zatražite ponudu.">
-  <meta name="theme-color" content="#3361ab">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Klimoteka — Povoljne klime za cijelu Hrvatsku</title>
+  <meta name="description" content="Klimoteka je trgovina klima uređaja za cijelu Hrvatsku. Tesla, Toshiba, Haier i Maxon. Dostava diljem zemlje, ugradnja u Zagrebu i okolici. 5 godina garancije.">
+  <meta name="theme-color" content="#0D4539">
+  <meta property="og:title" content="Klimoteka — Povoljne klime za cijelu Hrvatsku">
+  <meta property="og:description" content="Trgovina klima uređaja: Tesla, Toshiba, Haier i Maxon. Dostava u cijelu Hrvatsku, ugradnja u Zagrebu i okolici. 5 godina garancije.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hr_HR">
+  <meta property="og:image" content="images/og-klimoteka.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Klimoteka — Povoljne klime za cijelu Hrvatsku">
+  <meta name="twitter:description" content="Trgovina klima uređaja: Tesla, Toshiba, Haier i Maxon. Dostava u cijelu Hrvatsku, ugradnja u Zagrebu i okolici. 5 godina garancije.">
+  <meta name="twitter:image" content="images/og-klimoteka.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/klimoteka-ikona-192.png">
+  <link rel="apple-touch-icon" href="images/klimoteka-ikona-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="images/klimoteka-ikona-512.png">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -14,18 +26,21 @@
   <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
   <header class="site-header" id="siteHeader" data-menu-open="false" data-scrolled="false">
     <div class="container site-header__bar">
-      <a class="logo" href="index.html" aria-label="Solar Storm, početna">
-        <img class="logo__img" src="images/logo-solarstorm.png" width="170" height="120" alt="Solar Storm">
+      <a class="logo" href="index.html" aria-label="Klimoteka, početna">
+        <img class="logo__img" src="images/klimoteka-logo.svg" width="354" height="36" alt="Klimoteka">
       </a>
       <nav class="nav-desktop" aria-label="Glavni izbornik">
         <ul class="nav-desktop__list">
-          <li><a href="index.html" aria-current="page">Početna</a></li>
-          <li><a href="#brendovi">Brendovi</a></li>
-          <li><a href="#usluge">Usluge</a></li>
-          <li><a href="#o-nama">O nama</a></li>
+          <li><a href="#brend-tesla">Tesla</a></li>
+          <li><a href="#brend-toshiba">Toshiba</a></li>
+          <li><a href="#brend-haier">Haier</a></li>
+          <li><a href="#brend-maxon">Maxon</a></li>
+          <li><a href="#ugradnja">Ugradnja</a></li>
+          <li><a href="#veleprodaja">Veleprodaja</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
+      <a class="header-phone" href="tel:+385914692713">091 469 2713</a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Izbornik" data-burger>
         <span></span><span></span><span></span>
       </button>
@@ -33,176 +48,102 @@
     <button class="scrim" type="button" tabindex="-1" aria-hidden="true" data-scrim></button>
     <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilni izbornik">
       <ul>
-        <li><a href="index.html">Početna</a></li>
-        <li><a href="#brendovi">Brendovi</a></li>
-        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#brend-tesla">Tesla</a></li>
+          <li><a href="#brend-toshiba">Toshiba</a></li>
+          <li><a href="#brend-haier">Haier</a></li>
+          <li><a href="#brend-maxon">Maxon</a></li>
+          <li><a href="#ugradnja">Ugradnja</a></li>
+          <li><a href="#veleprodaja">Veleprodaja</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         <li><a href="#o-nama">O nama</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
       </ul>
-      <p class="mobile-menu__note">Zagreb · <a href="tel:+385914692713">091 469 2713</a></p>
+      <p class="mobile-menu__note"><a href="tel:+385914692713">091 469 2713</a></p>
     </nav>
   </header>
 
   <main id="sadrzaj">
-    <section class="hero" data-slider aria-roledescription="vrtuljak" aria-label="Istaknute teme">
-      <div class="hero__track" id="heroTrack" data-slider-track tabindex="0" aria-label="Slajdovi, strelice lijevo i desno mijenjaju slajd">
-        <article class="hero__slide hero__slide--brands" id="slajd-ustedba">
-          <div class="brand-rotator" aria-label="Brendovi: Tesla, Toshiba, Haier i Maxon">
-            <figure class="brand-rotator__item" style="--i:0"><img src="images/models/tesla-tt37af.webp" alt="Klima uređaj Tesla Virtuoso." fetchpriority="high"><figcaption><strong>Tesla</strong> Virtuoso</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:1"><img src="images/models/toshiba-shorai-edge-black.webp" alt="Klima uređaj Toshiba Shorai Edge Black."><figcaption><strong>Toshiba</strong> Shorai Edge Black</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:2"><img src="images/models/haier-flexis-plus-crna.webp" alt="Klima uređaj Haier Flexis Plus."><figcaption><strong>Haier</strong> Flexis Plus</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:3"><img src="images/models/maxon-fresh.webp" alt="Klima uređaj Maxon Fresh."><figcaption><strong>Maxon</strong> Fresh</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:4"><img src="images/models/tesla-tt51tp81.webp" alt="Klima uređaj Tesla Advance."><figcaption><strong>Tesla</strong> Advance</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:5"><img src="images/models/toshiba-daiseikai-10-wood.webp" alt="Klima uređaj Toshiba DaiSeiKai 10 Wood."><figcaption><strong>Toshiba</strong> DaiSeiKai 10 Wood</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:6"><img src="images/models/haier-expert-nordic.webp" alt="Klima uređaj Haier Expert Nordic."><figcaption><strong>Haier</strong> Expert Nordic</figcaption></figure>
-            <figure class="brand-rotator__item" style="--i:7"><img src="images/models/haier-pearl-premium.webp" alt="Klima uređaj Haier Pearl Premium."><figcaption><strong>Haier</strong> Pearl Premium</figcaption></figure>
+    <section class="hero" aria-label="Uvod">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1>Povoljne klime za cijelu Hrvatsku</h1>
+          <p class="hero__sub">Dostava u cijelu Hrvatsku, ugradnja u Zagrebu i okolici</p>
+          <a class="btn" href="#kontakt">Zatražite ponudu</a>
+        </div>
+        <div class="hero__visual" data-hero-rotator>
+          <div class="hero__stage" aria-live="polite">
+            <figure class="is-active" data-hero-slide data-caption="Tesla Virtuoso"><img src="images/models/tesla-tt37af.webp" width="912" height="415" alt="Klima uređaj Tesla Virtuoso." fetchpriority="high"></figure>
+            <figure data-hero-slide data-caption="Toshiba Shorai Edge Black"><img src="images/models/toshiba-shorai-edge-black.webp" width="733" height="353" alt="Klima uređaj Toshiba Shorai Edge Black." loading="lazy"></figure>
+            <figure data-hero-slide data-caption="Haier Flexis Plus"><img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Klima uređaj Haier Flexis Plus." loading="lazy"></figure>
+            <figure data-hero-slide data-caption="Maxon Fresh"><img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Klima uređaj Maxon Fresh." loading="lazy"></figure>
+            <figure data-hero-slide data-caption="Tesla Advance"><img src="images/models/tesla-tt51tp81.webp" width="597" height="274" alt="Klima uređaj Tesla Advance." loading="lazy"></figure>
+            <figure data-hero-slide data-caption="Toshiba DaiSeiKai 10 Wood"><img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Klima uređaj Toshiba DaiSeiKai 10 Wood." loading="lazy"></figure>
+            <figure data-hero-slide data-caption="Haier Expert Nordic"><img src="images/models/haier-expert-nordic.webp" width="912" height="382" alt="Klima uređaj Haier Expert Nordic." loading="lazy"></figure>
+            <figure data-hero-slide data-caption="Haier Pearl Premium"><img src="images/models/haier-pearl-premium.webp" width="912" height="463" alt="Klima uređaj Haier Pearl Premium." loading="lazy"></figure>
           </div>
-          <div class="hero__copy">
-            <h1>Ušteda<br>energije</h1>
-            <p>Hlađenje i grijanje bez suvišne potrošnje.</p>
-            <a class="btn btn--outline" href="#brendovi">Saznajte više</a>
+          <p class="hero__caption" data-hero-caption><strong>Tesla</strong> Virtuoso</p>
+          <div class="hero__controls">
+            <button class="hero__toggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pauziraj izmjenu slika">
+              <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
+              <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2.5v11l10-5.5z"/></svg>
+            </button>
+            <div class="hero__dots" role="group" aria-label="Odabir modela">
+            <button type="button" data-hero-dot class="is-active" aria-current="true" aria-label="Tesla Virtuoso"></button>
+            <button type="button" data-hero-dot aria-label="Toshiba Shorai Edge Black"></button>
+            <button type="button" data-hero-dot aria-label="Haier Flexis Plus"></button>
+            <button type="button" data-hero-dot aria-label="Maxon Fresh"></button>
+            <button type="button" data-hero-dot aria-label="Tesla Advance"></button>
+            <button type="button" data-hero-dot aria-label="Toshiba DaiSeiKai 10 Wood"></button>
+            <button type="button" data-hero-dot aria-label="Haier Expert Nordic"></button>
+            <button type="button" data-hero-dot aria-label="Haier Pearl Premium"></button>
+            </div>
           </div>
-        </article>
-        <article class="hero__slide" id="slajd-tiho">
-          <img class="pos-tiho" src="images/hero-tiho.jpg" width="1920" height="1280" alt="Bijela unutarnja jedinica klima uređaja ispod stropa.">
-          <div class="hero__copy">
-            <h2>Tiho hlađenje<br>i grijanje</h2>
-            <p>Udobnost koja ostaje u pozadini.</p>
-            <a class="btn btn--outline" href="#usluge">Saznajte više</a>
-          </div>
-        </article>
-        <article class="hero__slide" id="slajd-montaza">
-          <img class="pos-montaza" src="images/hero-montaza.jpg" width="1920" height="1586" alt="Serviser na krovu radi na klimatizacijskoj jedinici.">
-          <div class="hero__copy">
-            <h2>Montaža</h2>
-            <p>Od odabira uređaja do ugradnje u Zagrebu.</p>
-            <a class="btn btn--outline" href="#kontakt">Saznajte više</a>
-          </div>
-        </article>
-      </div>
-      <div class="hero__ui">
-        <button class="hero__toggle" type="button" data-slider-toggle aria-pressed="false" aria-label="Pauziraj automatsku izmjenu slajdova">
-          <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
-          <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2.5v11l10-5.5z"/></svg>
-        </button>
-        <div class="hero__dots" role="group" aria-label="Odabir slajda">
-          <a class="hero__dot is-active" href="#slajd-ustedba" data-slider-dot aria-current="true" aria-label="Slajd 1 od 3: Ušteda energije">1</a>
-          <a class="hero__dot" href="#slajd-tiho" data-slider-dot aria-label="Slajd 2 od 3: Tiho hlađenje i grijanje">2</a>
-          <a class="hero__dot" href="#slajd-montaza" data-slider-dot aria-label="Slajd 3 od 3: Montaža">3</a>
         </div>
       </div>
     </section>
 
-    <section class="banner" aria-labelledby="prodaja-naslov">
-      <img class="pos-prodaja" src="images/banner-prodaja.jpg" width="1920" height="1282" alt="Suvremeni dnevni boravak s dnevnim svjetlom i garniturom." loading="lazy">
-      <div class="banner__copy">
-        <h2 id="prodaja-naslov">Prodaja</h2>
-        <p>Klima uređaji za stan, kuću i ured. Model biramo prema prostoru, a cijenu šaljemo u ponudi.</p>
-        <a class="btn btn--amber" href="#kontakt" data-tema="Prodaja">Zatražite ponudu</a>
-      </div>
-    </section>
-
-    <section class="section" id="usluge" aria-labelledby="usluge-naslov">
+    <section class="advantages" aria-label="Prednosti">
       <div class="container">
-        <div class="section__head">
-          <h2 id="usluge-naslov">Usluge</h2>
-          <p>Prodaja, montaža, servis i savjetovanje. Jedan upit pokriva ono što vam treba.</p>
-        </div>
-        <div class="tiles">
-          <a class="tile" href="#kontakt" data-tema="Prodaja">
-            <span class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
-                <rect x="6" y="11" width="28" height="14" rx="2"/>
-                <path d="M10 17h20M10 21h12" stroke-linecap="round"/>
-                <path d="M14 25v3M26 25v3" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <h3>Prodaja</h3>
-            <p>Odabir i nabava klima uređaja iz brendova koje vodimo u ponudi.</p>
-          </a>
-          <a class="tile" href="#kontakt" data-tema="Montaža">
-            <span class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 25l10-10"/>
-                <path d="M22.5 12.5l3-3a2.5 2.5 0 013.5 3.5l-3 3"/>
-                <path d="M14.5 24.5l-3 3a2.5 2.5 0 103.5 3.5l3-3"/>
-                <path d="M8 32l4-4"/>
-              </svg>
-            </span>
-            <h3>Montaža</h3>
-            <p>Ugradnja unutarnje i vanjske jedinice te priprema instalacije.</p>
-          </a>
-          <a class="tile" href="#kontakt" data-tema="Servis">
-            <span class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-                <circle cx="20" cy="20" r="11"/>
-                <path d="M20 13v7l5 3"/>
-              </svg>
-            </span>
-            <h3>Servis</h3>
-            <p>Redovito održavanje i pomoć kad uređaj prestane raditi kako treba.</p>
-          </a>
-          <a class="tile" href="#kontakt" data-tema="Savjetovanje">
-            <span class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
-                <path d="M8 12h16a4 4 0 014 4v6a4 4 0 01-4 4H16l-6 4v-4H8a4 4 0 01-4-4v-6a4 4 0 014-4z"/>
-              </svg>
-            </span>
-            <h3>Savjetovanje</h3>
-            <p>Razgovor prije kupnje, prema prostoru i načinu korištenja. Bez obveze.</p>
-          </a>
-        </div>
+        <ul class="advantages__list">
+          <li><span>Cijena</span>Povoljne cijene</li>
+          <li><span>Jamstvo</span>5 godina garancije</li>
+          <li><span>Dostava</span>Dostava u cijelu Hrvatsku</li>
+        </ul>
       </div>
     </section>
 
-    <section class="banner banner--right" aria-labelledby="servis-naslov">
-      <img class="pos-rad" src="images/banner-rad.jpg" width="1920" height="2918" alt="Serviser s manometrima kleči uz klimatizacijsku instalaciju." loading="lazy">
-      <div class="banner__copy">
-        <h2 id="servis-naslov">Servis</h2>
-        <p>Pregled, održavanje i otklanjanje kvara. Termin dogovaramo nakon što nam se javite.</p>
-        <a class="btn btn--amber" href="#kontakt" data-tema="Servis">Zatražite ponudu</a>
-      </div>
-    </section>
-
-    <section class="banner" aria-labelledby="savjet-naslov">
-      <img class="pos-savjet" src="images/banner-savjet.jpg" width="1920" height="1280" alt="Svijetli dnevni boravak s velikim prozorima i bijelim namještajem." loading="lazy">
-      <div class="banner__copy">
-        <h2 id="savjet-naslov">Savjetovanje</h2>
-        <p>Prije odluke prolazimo prostor i navike korištenja. Na stranici nema cjenika ni obveze kupnje.</p>
-        <a class="btn btn--amber" href="#kontakt" data-tema="Savjetovanje">Zatražite ponudu</a>
-      </div>
-    </section>
-
-    <!--
-      BRENDOVI — lako preimenovanje
-      Da promijenite brend, uredite blok s data-brand (naslov i tekst).
-      Isto ime potražite u README.md.
-    -->
-    <section class="section" id="brendovi" aria-labelledby="brendovi-naslov">
+    <section class="section section--cream" id="brendovi" aria-labelledby="brendovi-naslov">
       <div class="container">
         <div class="section__head">
           <h2 id="brendovi-naslov">Brendovi</h2>
-          <p>Tesla, Toshiba, Haier i Maxon. Za cijenu uređaja s montažom pošaljite upit ili nazovite.</p>
+          <p>Tesla, Toshiba, Haier i Maxon. Na svim uređajima stoji 5 godina garancije.</p>
         </div>
-        <div class="brands">
-
-          <article class="brand-block" data-brand="tesla" id="brend-tesla">
-            <div class="brand-block__intro">
-              <span class="brand-card__rule" aria-hidden="true"></span>
+        <div class="brand-picks" role="tablist" aria-label="Odabir brenda">
+            <button class="brand-pick" type="button" role="tab" id="tab-tesla" aria-controls="brend-tesla" aria-selected="true" data-brand-tab="tesla">
+              <span class="brand-pick__photo"><img src="images/models/tesla-tt37af.webp" width="912" height="415" alt="Klima uređaj Tesla Virtuoso." loading="lazy"></span>
+              <strong>Tesla</strong>
+            </button>
+            <button class="brand-pick" type="button" role="tab" id="tab-toshiba" aria-controls="brend-toshiba" aria-selected="false" data-brand-tab="toshiba">
+              <span class="brand-pick__photo"><img src="images/models/toshiba-shorai-edge-black.webp" width="733" height="353" alt="Klima uređaj Toshiba Shorai Edge Black." loading="lazy"></span>
+              <strong>Toshiba</strong>
+            </button>
+            <button class="brand-pick" type="button" role="tab" id="tab-haier" aria-controls="brend-haier" aria-selected="false" data-brand-tab="haier">
+              <span class="brand-pick__photo"><img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Klima uređaj Haier Flexis Plus." loading="lazy"></span>
+              <strong>Haier</strong>
+            </button>
+            <button class="brand-pick" type="button" role="tab" id="tab-maxon" aria-controls="brend-maxon" aria-selected="false" data-brand-tab="maxon">
+              <span class="brand-pick__photo"><img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Klima uređaj Maxon Fresh." loading="lazy"></span>
+              <strong>Maxon</strong>
+            </button>
+        </div>
+          <div class="brand-panel" id="brend-tesla" role="tabpanel" aria-labelledby="tab-tesla" data-brand-panel="tesla">
+            <div class="brand-panel__intro">
               <h3>Tesla</h3>
-              <p>Klima uređaji brenda Tesla za stan i manje poslovne prostore. Točan model dogovaramo u ponudi.</p>
-              <p class="brand-block__warranty">Jamstvo: 5 godina.</p>
-              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Tesla</a>
+              <p>Klima uređaji brenda Tesla za stan i manje poslovne prostore. Točan model dogovaramo u ponudi. Jamstvo: 5 godina.</p>
             </div>
-            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Tesla modeli">
-              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Tesla model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
-              </button>
-              <div class="model-slider__viewport">
-                <ul class="model-slider__track" data-model-track>
+            <ul class="model-grid">
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/tesla-ta36ffcl.webp" width="800" height="364" alt="Unutarnja jedinica Tesla Select TA36FFCL-1232IAW." loading="lazy">
+                      <img src="images/models/tesla-ta36ffcl.webp" width="912" height="415" alt="Unutarnja jedinica Tesla Select TA36FFCL-1232IAW." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Classic/Select</p>
@@ -214,7 +155,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/tesla-tt37af.webp" width="800" height="364" alt="Unutarnja jedinica Tesla Virtuoso TT37AF-1232IAW s FreshAIR O2." loading="lazy">
+                      <img src="images/models/tesla-tt37af.webp" width="912" height="415" alt="Unutarnja jedinica Tesla Virtuoso TT37AF-1232IAW s FreshAIR O2." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Virtuoso</p>
@@ -226,7 +167,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/tesla-ta53fful.webp" width="800" height="352" alt="Unutarnja jedinica Tesla Select TA53FFUL-1832IAW." loading="lazy">
+                      <img src="images/models/tesla-ta53fful.webp" width="912" height="401" alt="Unutarnja jedinica Tesla Select TA53FFUL-1832IAW." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Classic/Select</p>
@@ -238,7 +179,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/tesla-tt51tp81.webp" width="800" height="367" alt="Unutarnja jedinica Tesla Advance TT51TP81-1832IHWT." loading="lazy">
+                      <img src="images/models/tesla-tt51tp81.webp" width="597" height="274" alt="Unutarnja jedinica Tesla Advance TT51TP81-1832IHWT." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Advance</p>
@@ -250,7 +191,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/tesla-tt68tp21.webp" width="800" height="365" alt="Unutarnja jedinica Tesla TT68TP21-2432IAW." loading="lazy">
+                      <img src="images/models/tesla-tt68tp21.webp" width="912" height="416" alt="Unutarnja jedinica Tesla TT68TP21-2432IAW." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Ambient-Style-Superior</p>
@@ -260,32 +201,17 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                </ul>
-              </div>
-              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Tesla model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
-              </button>
-              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Tesla modela"></div>
-            </div>
-          </article>
-
-          <article class="brand-block" data-brand="toshiba" id="brend-toshiba">
-            <div class="brand-block__intro">
-              <span class="brand-card__rule" aria-hidden="true"></span>
+            </ul>
+          </div>
+          <div class="brand-panel" id="brend-toshiba" role="tabpanel" aria-labelledby="tab-toshiba" data-brand-panel="toshiba" hidden>
+            <div class="brand-panel__intro">
               <h3>Toshiba</h3>
-              <p>Klima uređaji brenda Toshiba. Odabir ovisi o prostoru i načinu korištenja.</p>
-              <p class="brand-block__warranty">Jamstvo: 5 godina.</p>
-              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Toshiba</a>
+              <p>Klima uređaji brenda Toshiba. Odabir ovisi o prostoru i načinu korištenja. Jamstvo: 5 godina.</p>
             </div>
-            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Toshiba modeli">
-              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Toshiba model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
-              </button>
-              <div class="model-slider__viewport">
-                <ul class="model-slider__track" data-model-track>
+            <ul class="model-grid">
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="800" height="490" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
+                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">DaiSeiKai 10 Wood</p>
@@ -297,7 +223,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="800" height="490" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
+                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">DaiSeiKai 10 Wood</p>
@@ -309,7 +235,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="800" height="490" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
+                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="912" height="559" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">DaiSeiKai 10 Wood</p>
@@ -321,7 +247,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/toshiba-shorai-edge-black.webp" width="800" height="385" alt="Unutarnja jedinica Toshiba Shorai Edge Black." loading="lazy">
+                      <img src="images/models/toshiba-shorai-edge-black.webp" width="733" height="353" alt="Unutarnja jedinica Toshiba Shorai Edge Black." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Shorai Edge Black</p>
@@ -331,32 +257,17 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                </ul>
-              </div>
-              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Toshiba model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
-              </button>
-              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Toshiba modela"></div>
-            </div>
-          </article>
-
-          <article class="brand-block" data-brand="haier" id="brend-haier">
-            <div class="brand-block__intro">
-              <span class="brand-card__rule" aria-hidden="true"></span>
+            </ul>
+          </div>
+          <div class="brand-panel" id="brend-haier" role="tabpanel" aria-labelledby="tab-haier" data-brand-panel="haier" hidden>
+            <div class="brand-panel__intro">
               <h3>Haier</h3>
-              <p>Klima uređaji brenda Haier za dom i poslovni prostor. Točan model dogovaramo u ponudi.</p>
-              <p class="brand-block__warranty">Jamstvo: 5 godina.</p>
-              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Haier</a>
+              <p>Klima uređaji brenda Haier za dom i poslovni prostor. Točan model dogovaramo u ponudi. Jamstvo: 5 godina.</p>
             </div>
-            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Haier modeli">
-              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Haier model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
-              </button>
-              <div class="model-slider__viewport">
-                <ul class="model-slider__track" data-model-track>
+            <ul class="model-grid">
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-revive-plus.webp" width="800" height="348" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
+                      <img src="images/models/haier-revive-plus.webp" width="912" height="397" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Revive Plus</p>
@@ -368,7 +279,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-flexis-plus-crna.webp" width="800" height="346" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
+                      <img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Flexis Plus crna mat</p>
@@ -380,7 +291,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-revive-plus.webp" width="800" height="348" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
+                      <img src="images/models/haier-revive-plus.webp" width="912" height="397" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Revive Plus</p>
@@ -392,7 +303,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-expert-nordic.webp" width="800" height="335" alt="Unutarnja jedinica Haier Expert Nordic." loading="lazy">
+                      <img src="images/models/haier-expert-nordic.webp" width="912" height="382" alt="Unutarnja jedinica Haier Expert Nordic." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Expert Nordic</p>
@@ -404,7 +315,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-revive-plus.webp" width="800" height="348" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
+                      <img src="images/models/haier-revive-plus.webp" width="912" height="397" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Revive Plus</p>
@@ -416,7 +327,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-flexis-plus-crna.webp" width="800" height="346" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
+                      <img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Flexis Plus crna mat</p>
@@ -428,7 +339,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-pearl-premium.webp" width="800" height="406" alt="Unutarnja jedinica Haier Pearl Premium." loading="lazy">
+                      <img src="images/models/haier-pearl-premium.webp" width="912" height="463" alt="Unutarnja jedinica Haier Pearl Premium." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Pearl Premium</p>
@@ -440,7 +351,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/haier-flexis-plus-crna.webp" width="800" height="346" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
+                      <img src="images/models/haier-flexis-plus-crna.webp" width="912" height="394" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Flexis Plus crna mat</p>
@@ -450,32 +361,17 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                </ul>
-              </div>
-              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Haier model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
-              </button>
-              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Haier modela"></div>
-            </div>
-          </article>
-
-          <article class="brand-block" data-brand="maxon" id="brend-maxon">
-            <div class="brand-block__intro">
-              <span class="brand-card__rule" aria-hidden="true"></span>
+            </ul>
+          </div>
+          <div class="brand-panel" id="brend-maxon" role="tabpanel" aria-labelledby="tab-maxon" data-brand-panel="maxon" hidden>
+            <div class="brand-panel__intro">
               <h3>Maxon</h3>
-              <p>Klima uređaji brenda Maxon. Detalje šaljemo uz ponudu, ne na ovoj stranici.</p>
-              <p class="brand-block__warranty">Jamstvo: 5 godina.</p>
-              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Maxon</a>
+              <p>Klima uređaji brenda Maxon. Detalje šaljemo uz ponudu, ne na ovoj stranici. Jamstvo: 5 godina.</p>
             </div>
-            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Maxon modeli">
-              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Maxon model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
-              </button>
-              <div class="model-slider__viewport">
-                <ul class="model-slider__track" data-model-track>
+            <ul class="model-grid">
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                      <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Fresh</p>
@@ -487,7 +383,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                      <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Fresh</p>
@@ -499,7 +395,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                      <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Fresh</p>
@@ -511,7 +407,7 @@
                   </li>
                   <li class="model-card">
                     <figure class="model-card__photo">
-                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                      <img src="images/models/maxon-fresh.webp" width="481" height="212" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
                     </figure>
                     <div class="model-card__body">
                       <p class="model-card__series">Fresh</p>
@@ -521,59 +417,49 @@
                       <p class="model-card__warranty">5 godina jamstva</p>
                     </div>
                   </li>
-                </ul>
-              </div>
-              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Maxon model">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
-              </button>
-              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Maxon modela"></div>
-            </div>
-          </article>
+            </ul>
+          </div>
+      </div>
+    </section>
 
+    <section class="section" id="ugradnja" aria-labelledby="ugradnja-naslov">
+      <div class="container">
+        <div class="section__lead">
+          <h2 id="ugradnja-naslov">Ugradnja</h2>
+          <p>Ugrađujemo klima uređaje u Zagrebu i okolici. Dostava uređaja ide u cijelu Hrvatsku. Točan model i način ugradnje dogovaramo u ponudi.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section--surface" id="o-nama" aria-labelledby="o-nama-naslov">
-      <div class="container">
+    <section class="section section--petrol" id="veleprodaja" aria-labelledby="veleprodaja-naslov">
+      <div class="container split">
+        <div class="section__lead">
+          <h2 id="veleprodaja-naslov">Veleprodaja</h2>
+          <p>Namijenjena instalterima i serviserima klima. Pošaljite upit i javit ćemo se s ponudom.</p>
+        </div>
+        <p><a class="btn btn--outline" href="mailto:solarstormdoo@gmail.com?subject=Veleprodaja">Pošaljite upit za veleprodaju</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="o-nama" aria-labelledby="o-nama-naslov">
+      <div class="container about">
         <div class="section__head">
           <h2 id="o-nama-naslov">O nama</h2>
-          <p>Solar Storm d.o.o. iz Sesveta bavi se prodajom, montažom i servisom klima uređaja na području Zagreba i okolice. Nudimo uređaje brendova Tesla, Toshiba, Haier i Maxon. Najvažniji su nam kvaliteta, zadovoljstvo korisnika i povoljne cijene.</p>
         </div>
-        <div class="reasons">
-          <article class="reason">
-            <span class="reason__num">01</span>
-            <h3>Kvaliteta</h3>
-            <p>Biramo provjerene brendove i uređaje ugrađujemo pažljivo i uredno, tako da godinama rade bez problema.</p>
-          </article>
-          <article class="reason">
-            <span class="reason__num">02</span>
-            <h3>Zadovoljstvo korisnika</h3>
-            <p>Savjetujemo prema vašem prostoru i potrebama. Odabir, ugradnja i servis ostaju kod iste tvrtke, a uz uređaj dobivate 5 godina garancije.</p>
-          </article>
-          <article class="reason">
-            <span class="reason__num">03</span>
-            <h3>Povoljne cijene</h3>
-            <p>Za svaki budžet nađemo dobar uređaj, od povoljnih do premium modela, uz jasnu ponudu s montažom.</p>
-          </article>
-          <article class="reason">
-            <span class="reason__num">04</span>
-            <h3>Sesvete, Zagreb</h3>
-            <p>Nalazimo se u Sesvetama, Grge Novaka 25, i radimo na području Zagreba i okolice.</p>
-          </article>
-        </div>
+        <p>Klimoteka je trgovina klima uređaja za cijelu Hrvatsku: maloprodaja, veleprodaja i ugradnja. Biramo provjerene brendove i uređaje ugrađujemo pažljivo, uz jasnu ponudu i 5 godina garancije.</p>
+        <p>Najvažniji su nam kvaliteta, zadovoljstvo korisnika i povoljne cijene.</p>
       </div>
     </section>
 
-    <section class="section" id="kontakt" aria-labelledby="kontakt-naslov">
+    <section class="section section--cream" id="kontakt" aria-labelledby="kontakt-naslov">
       <div class="container contact">
         <div class="contact__intro">
-          <h2 id="kontakt-naslov">Pošaljite upit</h2>
-          <p>Napišite treba li vam novi uređaj, montaža, servis ili savjet. Obrazac ne šalje podatke na poslužitelj: otvara program za e-poštu na vašem uređaju.</p>
+          <h2 id="kontakt-naslov">Zatražite ponudu</h2>
+          <p>Napišite treba li vam novi uređaj, ugradnja, servis ili veleprodaja. Obrazac ne šalje podatke na poslužitelj: otvara program za e-poštu na vašem uređaju.</p>
           <ul class="contact-list">
             <li>
               <span>Adresa</span>
-              <strong>Grge Novaka 25, 10360 Sesvete, Hrvatska</strong>
+              <strong>Grge Novaka 25, 10360 Sesvete</strong>
             </li>
             <li>
               <span>Telefon</span>
@@ -598,16 +484,16 @@
           </div>
           <div class="form-row form-row--2">
             <div class="field">
-              <label for="telefon">Telefon <span style="font-weight:400;color:#5c626b">(nije obavezno)</span></label>
+              <label for="telefon">Telefon <span class="optional">(nije obavezno)</span></label>
               <input id="telefon" name="telefon" type="tel" autocomplete="tel">
             </div>
             <div class="field">
               <label for="tema">Tema upita</label>
               <select id="tema" name="tema">
                 <option>Prodaja</option>
-                <option>Montaža</option>
+                <option>Ugradnja</option>
                 <option>Servis</option>
-                <option>Savjetovanje</option>
+                <option>Veleprodaja</option>
               </select>
             </div>
           </div>
@@ -621,8 +507,8 @@
           </label>
           <p class="form-status" data-form-status role="status" hidden></p>
           <textarea class="form-copy" data-form-copy hidden readonly aria-label="Tekst upita za kopiranje"></textarea>
-          <button class="btn btn--amber" type="button" data-copy hidden>Kopiraj tekst upita</button>
-          <button class="btn btn--amber btn--full" type="submit">Pošaljite upit</button>
+          <button class="btn" type="button" data-copy hidden>Kopiraj tekst upita</button>
+          <button class="btn btn--full" type="submit">Pošaljite upit</button>
         </form>
       </div>
     </section>
@@ -631,16 +517,17 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="logo" href="index.html" aria-label="Solar Storm, početna">
-          <img class="logo__img" src="images/logo-solarstorm.png" width="170" height="120" alt="Solar Storm">
+        <a class="logo" href="index.html" aria-label="Klimoteka, početna">
+          <img class="logo__img" src="images/klimoteka-logo-bijeli.svg" width="354" height="36" alt="Klimoteka">
         </a>
-        <p>Prodaja i montaža klima uređaja. Solar Storm d.o.o., Zagreb.</p>
+        <p>Povoljne klime za cijelu Hrvatsku. Solar Storm d.o.o., Sesvete.</p>
       </div>
       <div>
         <h2>Istražite</h2>
         <ul>
           <li><a href="#brendovi">Brendovi</a></li>
-          <li><a href="#usluge">Usluge</a></li>
+          <li><a href="#ugradnja">Ugradnja</a></li>
+          <li><a href="#veleprodaja">Veleprodaja</a></li>
           <li><a href="#o-nama">O nama</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
@@ -664,7 +551,6 @@
     </div>
     <div class="container footer-bottom">
       <span>© 2026 Solar Storm d.o.o.</span>
-      <span>Predložak stranice — oznake u uglatim zagradama treba zamijeniti.</span>
     </div>
   </footer>
   <script src="js/main.js"></script>

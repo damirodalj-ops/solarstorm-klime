@@ -16,6 +16,7 @@
     if (!header || !burger) return;
     header.setAttribute("data-menu-open", open ? "true" : "false");
     burger.setAttribute("aria-expanded", open ? "true" : "false");
+    if (scrim) scrim.setAttribute("aria-hidden", open ? "false" : "true");
     document.body.classList.toggle("menu-open", open);
     if (open) {
       var first = menu && menu.querySelector("a");
@@ -43,23 +44,32 @@
     if (event.key === "Escape") setMenu(false);
   });
 
-  var slider = document.querySelector("[data-slider]");
-  if (slider) {
-    var track = slider.querySelector("[data-slider-track]");
-    var slides = Array.prototype.slice.call(track.children);
-    var dots = Array.prototype.slice.call(slider.querySelectorAll("[data-slider-dot]"));
-    var toggle = slider.querySelector("[data-slider-toggle]");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var rotator = document.querySelector("[data-hero-rotator]");
+  if (rotator) {
+    var slides = Array.prototype.slice.call(rotator.querySelectorAll("[data-hero-slide]"));
+    var dots = Array.prototype.slice.call(rotator.querySelectorAll("[data-hero-dot]"));
+    var toggle = rotator.querySelector("[data-hero-toggle]");
+    var caption = rotator.querySelector("[data-hero-caption]");
     var index = 0;
     var timer = null;
     var delay = 5000;
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var paused = reduce;
+
+    function setCaption(i) {
+      if (!caption || !slides[i]) return;
+      var raw = slides[i].getAttribute("data-caption") || "";
+      var parts = raw.split(" ");
+      var brand = parts.shift() || "";
+      var rest = parts.join(" ");
+      caption.innerHTML = "<strong>" + brand + "</strong> " + rest;
+    }
 
     function setActive(next) {
       index = next;
       slides.forEach(function (slide, i) {
-        if (i === next) slide.removeAttribute("inert");
-        else slide.setAttribute("inert", "");
+        slide.classList.toggle("is-active", i === next);
       });
       dots.forEach(function (dot, i) {
         var on = i === next;
@@ -67,46 +77,12 @@
         if (on) dot.setAttribute("aria-current", "true");
         else dot.removeAttribute("aria-current");
       });
+      setCaption(next);
     }
 
-    function go(next, behavior) {
-      var i = (next + slides.length) % slides.length;
-      var motion = reduce ? "auto" : (behavior || "smooth");
-      track.scrollTo({ left: track.clientWidth * i, behavior: motion });
-      setActive(i);
+    function go(next) {
+      setActive((next + slides.length) % slides.length);
     }
-
-    if ("IntersectionObserver" in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var i = slides.indexOf(entry.target);
-          if (i >= 0 && i !== index) setActive(i);
-        });
-      }, { root: track, threshold: 0.6 });
-      slides.forEach(function (slide) { observer.observe(slide); });
-    }
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener("click", function (event) {
-        event.preventDefault();
-        go(i);
-        restart();
-      });
-    });
-
-    track.addEventListener("keydown", function (event) {
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        go(index + 1);
-        restart();
-      }
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        go(index - 1);
-        restart();
-      }
-    });
 
     function stop() {
       if (timer) {
@@ -116,7 +92,7 @@
     }
 
     function start() {
-      if (paused || reduce || document.hidden || timer) return;
+      if (paused || reduce || document.hidden || timer || slides.length < 2) return;
       timer = setInterval(function () { go(index + 1); }, delay);
     }
 
@@ -131,9 +107,16 @@
       toggle.setAttribute("aria-pressed", paused ? "true" : "false");
       toggle.setAttribute(
         "aria-label",
-        paused ? "Pokreni automatsku izmjenu slajdova" : "Pauziraj automatsku izmjenu slajdova"
+        paused ? "Pokreni izmjenu slika" : "Pauziraj izmjenu slika"
       );
     }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () {
+        go(i);
+        restart();
+      });
+    });
 
     if (toggle) {
       toggle.addEventListener("click", function () {
@@ -144,12 +127,21 @@
       });
     }
 
-    slider.addEventListener("pointerenter", stop);
-    slider.addEventListener("pointerleave", start);
-    slider.addEventListener("focusin", stop);
-    slider.addEventListener("focusout", function (event) {
-      if (!slider.contains(event.relatedTarget)) start();
+    rotator.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        go(index + 1);
+        restart();
+      }
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        go(index - 1);
+        restart();
+      }
     });
+
+    rotator.addEventListener("pointerenter", stop);
+    rotator.addEventListener("pointerleave", start);
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) stop();
       else start();
@@ -160,119 +152,89 @@
     start();
   }
 
+  var tablist = document.querySelector("[role='tablist']");
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-brand-tab]"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll("[data-brand-panel]"));
+
+  function showBrand(slug, moveFocus) {
+    if (!slug) return;
+    var found = false;
+    tabs.forEach(function (tab) {
+      var on = tab.getAttribute("data-brand-tab") === slug;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.tabIndex = on ? 0 : -1;
+      if (on) found = true;
+    });
+    if (!found) return;
+    panels.forEach(function (panel) {
+      var on = panel.getAttribute("data-brand-panel") === slug;
+      if (on) panel.removeAttribute("hidden");
+      else panel.setAttribute("hidden", "");
+    });
+    if (moveFocus) {
+      var active = document.querySelector('[data-brand-tab="' + slug + '"]');
+      if (active) active.focus();
+    }
+  }
+
+  function slugFromHash(hash) {
+    var id = (hash || "").replace(/^#/, "");
+    if (id.indexOf("brend-") === 0) return id.slice(6);
+    var known = { tesla: 1, toshiba: 1, haier: 1, maxon: 1 };
+    if (known[id]) return id;
+    return "";
+  }
+
+  if (tabs.length) {
+    tabs.forEach(function (tab, i) {
+      tab.tabIndex = i === 0 ? 0 : -1;
+      tab.addEventListener("click", function () {
+        var slug = tab.getAttribute("data-brand-tab");
+        showBrand(slug);
+        if (history.replaceState) history.replaceState(null, "", "#brend-" + slug);
+      });
+    });
+
+    if (tablist) {
+      tablist.addEventListener("keydown", function (event) {
+        var current = document.activeElement;
+        var i = tabs.indexOf(current);
+        if (i < 0) return;
+        var next = -1;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (i + 1) % tabs.length;
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (i - 1 + tabs.length) % tabs.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = tabs.length - 1;
+        if (next < 0) return;
+        event.preventDefault();
+        showBrand(tabs[next].getAttribute("data-brand-tab"), true);
+      });
+    }
+
+    var initial = slugFromHash(window.location.hash);
+    if (initial) showBrand(initial);
+  }
+
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest('a[href^="#brend-"], a[href*="index.html#brend-"]');
+    if (!link) return;
+    var href = link.getAttribute("href") || "";
+    var hash = href.slice(href.indexOf("#"));
+    var slug = slugFromHash(hash);
+    if (slug) showBrand(slug);
+  });
+
+  window.addEventListener("hashchange", function () {
+    var slug = slugFromHash(window.location.hash);
+    if (slug) showBrand(slug);
+  });
+
   document.addEventListener("click", function (event) {
     var link = event.target.closest("[data-tema]");
     if (!link) return;
     var select = document.getElementById("tema");
     if (select) select.value = link.getAttribute("data-tema");
   });
-
-
-  function initModelSliders() {
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var sliders = document.querySelectorAll("[data-model-slider]");
-    sliders.forEach(function (slider) {
-      var track = slider.querySelector("[data-model-track]");
-      if (!track) return;
-      var cards = Array.prototype.slice.call(track.children);
-      if (!cards.length) return;
-      var prev = slider.querySelector("[data-model-prev]");
-      var next = slider.querySelector("[data-model-next]");
-      var dotsWrap = slider.querySelector("[data-model-dots]");
-      var index = 0;
-      var timer = null;
-      var delay = 5500;
-      var paused = reduce;
-      var dots = [];
-
-      if (dotsWrap) {
-        dotsWrap.innerHTML = "";
-        cards.forEach(function (card, i) {
-          var title = "";
-          var h = card.querySelector("h4");
-          var series = card.querySelector(".model-card__series");
-          if (series && h) title = series.textContent.trim() + " " + h.textContent.trim();
-          else if (h) title = h.textContent.trim();
-          var btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "model-slider__dot" + (i === 0 ? " is-active" : "");
-          btn.setAttribute("aria-label", "Model " + (i + 1) + " od " + cards.length + (title ? ": " + title : ""));
-          if (i === 0) btn.setAttribute("aria-current", "true");
-          btn.addEventListener("click", function () {
-            go(i);
-            restart();
-          });
-          dotsWrap.appendChild(btn);
-          dots.push(btn);
-        });
-      }
-
-      function setActive(i) {
-        index = i;
-        dots.forEach(function (dot, d) {
-          var on = d === i;
-          dot.classList.toggle("is-active", on);
-          if (on) dot.setAttribute("aria-current", "true");
-          else dot.removeAttribute("aria-current");
-        });
-      }
-
-      function go(nextIndex, behavior) {
-        var i = (nextIndex + cards.length) % cards.length;
-        var motion = reduce ? "auto" : (behavior || "smooth");
-        var left = cards[i].offsetLeft;
-        track.scrollTo({ left: left, behavior: motion });
-        setActive(i);
-      }
-
-      if ("IntersectionObserver" in window) {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            var i = cards.indexOf(entry.target);
-            if (i >= 0 && i !== index) setActive(i);
-          });
-        }, { root: track, threshold: 0.6 });
-        cards.forEach(function (card) { observer.observe(card); });
-      }
-
-      if (prev) prev.addEventListener("click", function () { go(index - 1); restart(); });
-      if (next) next.addEventListener("click", function () { go(index + 1); restart(); });
-
-      function stop() {
-        if (timer) {
-          clearInterval(timer);
-          timer = null;
-        }
-      }
-
-      function start() {
-        if (paused || reduce || document.hidden || timer) return;
-        timer = setInterval(function () { go(index + 1); }, delay);
-      }
-
-      function restart() {
-        stop();
-        start();
-      }
-
-      slider.addEventListener("pointerenter", stop);
-      slider.addEventListener("pointerleave", start);
-      slider.addEventListener("focusin", stop);
-      slider.addEventListener("focusout", function (event) {
-        if (!slider.contains(event.relatedTarget)) start();
-      });
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) stop();
-        else start();
-      });
-
-      setActive(0);
-      start();
-    });
-  }
-
-  initModelSliders();
 
   var form = document.querySelector("[data-inquiry]");
   if (!form) return;
@@ -302,27 +264,31 @@
     });
   }
 
-  copyBtn.addEventListener("click", function () {
-    var text = copyBox.value;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () {
-        copyBtn.textContent = "Tekst je kopiran";
-      }).catch(function () {
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      var text = copyBox.value;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          copyBtn.textContent = "Tekst je kopiran";
+        }).catch(function () {
+          copyBox.focus();
+          copyBox.select();
+        });
+      } else {
         copyBox.focus();
         copyBox.select();
-      });
-    } else {
-      copyBox.focus();
-      copyBox.select();
-    }
-  });
+      }
+    });
+  }
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     clearInvalid();
-    copyBox.hidden = true;
-    copyBtn.hidden = true;
-    copyBtn.textContent = "Kopiraj tekst upita";
+    if (copyBox) copyBox.hidden = true;
+    if (copyBtn) {
+      copyBtn.hidden = true;
+      copyBtn.textContent = "Kopiraj tekst upita";
+    }
 
     var name = field("ime").value.trim();
     var email = field("email").value.trim();
@@ -364,24 +330,24 @@
       "",
       message
     ].join("\n");
-    copyBox.value = body;
+    if (copyBox) copyBox.value = body;
 
     var target = contactEmail();
     var ready = target.indexOf("@") !== -1 && target.indexOf("[") === -1;
 
     if (!ready) {
-      copyBox.hidden = false;
-      copyBtn.hidden = false;
-      showStatus("Upit je sastavljen na ovom uređaju. Zamijenite [EMAIL] stvarnom adresom da bi se poruka otvorila u programu za e-poštu. Tekst možete kopirati.", false);
+      if (copyBox) copyBox.hidden = false;
+      if (copyBtn) copyBtn.hidden = false;
+      showStatus("Upit je sastavljen na ovom uređaju. Tekst možete kopirati.", false);
       return;
     }
 
     var href = "mailto:" + target
-      + "?subject=" + encodeURIComponent("Upit: " + tema + " — Solar Storm")
+      + "?subject=" + encodeURIComponent("Upit: " + tema + " — Klimoteka")
       + "&body=" + encodeURIComponent(body);
     showStatus("Otvaramo program za e-poštu. Ako se ništa ne dogodi, kopirajte tekst upita.", false);
-    copyBox.hidden = false;
-    copyBtn.hidden = false;
+    if (copyBox) copyBox.hidden = false;
+    if (copyBtn) copyBtn.hidden = false;
     window.location.href = href;
   });
 })();
