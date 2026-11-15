@@ -37,7 +37,7 @@ Haier još nije potvrđen. Kartica ima `data-brand="haier"` i oznaku „Na potvr
 4. poveznicu „Pošaljite upit…”
 5. rečenicu u uvodu odjeljka Brendovi, ako tamo još piše Haier
 
-Isto vrijedi za Tesla, Mitsubishi i Maxon. Logotipi brendova nisu korišteni — samo imena.
+Isto vrijedi za Tesla, Toshiba i Maxon. Logotipi brendova nisu korišteni — samo imena.
 
 ## Pravne stranice
 
@@ -59,7 +59,7 @@ Stranicu nemojte objavljivati dok oznake `[EMAIL]`, `[TELEFON]`, `[ADRESA]` i `[
 
 ## Fotografije
 
-Slike su s Pexelsa, licenca Pexels (besplatno korištenje, uključujući komercijalno). Na fotografijama nema logotipa Tesla, Mitsubishi, Haier ni Maxon.
+Slike su s Pexelsa, licenca Pexels (besplatno korištenje, uključujući komercijalno). Na fotografijama nema logotipa Tesla, Toshiba, Haier ni Maxon.
 
 | Datoteka | Autor | Izvor |
 | --- | --- | --- |
