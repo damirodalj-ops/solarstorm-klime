@@ -167,6 +167,113 @@
     if (select) select.value = link.getAttribute("data-tema");
   });
 
+
+  function initModelSliders() {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var sliders = document.querySelectorAll("[data-model-slider]");
+    sliders.forEach(function (slider) {
+      var track = slider.querySelector("[data-model-track]");
+      if (!track) return;
+      var cards = Array.prototype.slice.call(track.children);
+      if (!cards.length) return;
+      var prev = slider.querySelector("[data-model-prev]");
+      var next = slider.querySelector("[data-model-next]");
+      var dotsWrap = slider.querySelector("[data-model-dots]");
+      var index = 0;
+      var timer = null;
+      var delay = 5500;
+      var paused = reduce;
+      var dots = [];
+
+      if (dotsWrap) {
+        dotsWrap.innerHTML = "";
+        cards.forEach(function (card, i) {
+          var title = "";
+          var h = card.querySelector("h4");
+          var series = card.querySelector(".model-card__series");
+          if (series && h) title = series.textContent.trim() + " " + h.textContent.trim();
+          else if (h) title = h.textContent.trim();
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "model-slider__dot" + (i === 0 ? " is-active" : "");
+          btn.setAttribute("aria-label", "Model " + (i + 1) + " od " + cards.length + (title ? ": " + title : ""));
+          if (i === 0) btn.setAttribute("aria-current", "true");
+          btn.addEventListener("click", function () {
+            go(i);
+            restart();
+          });
+          dotsWrap.appendChild(btn);
+          dots.push(btn);
+        });
+      }
+
+      function setActive(i) {
+        index = i;
+        dots.forEach(function (dot, d) {
+          var on = d === i;
+          dot.classList.toggle("is-active", on);
+          if (on) dot.setAttribute("aria-current", "true");
+          else dot.removeAttribute("aria-current");
+        });
+      }
+
+      function go(nextIndex, behavior) {
+        var i = (nextIndex + cards.length) % cards.length;
+        var motion = reduce ? "auto" : (behavior || "smooth");
+        var left = cards[i].offsetLeft;
+        track.scrollTo({ left: left, behavior: motion });
+        setActive(i);
+      }
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var i = cards.indexOf(entry.target);
+            if (i >= 0 && i !== index) setActive(i);
+          });
+        }, { root: track, threshold: 0.6 });
+        cards.forEach(function (card) { observer.observe(card); });
+      }
+
+      if (prev) prev.addEventListener("click", function () { go(index - 1); restart(); });
+      if (next) next.addEventListener("click", function () { go(index + 1); restart(); });
+
+      function stop() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function start() {
+        if (paused || reduce || document.hidden || timer) return;
+        timer = setInterval(function () { go(index + 1); }, delay);
+      }
+
+      function restart() {
+        stop();
+        start();
+      }
+
+      slider.addEventListener("pointerenter", stop);
+      slider.addEventListener("pointerleave", start);
+      slider.addEventListener("focusin", stop);
+      slider.addEventListener("focusout", function (event) {
+        if (!slider.contains(event.relatedTarget)) start();
+      });
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) stop();
+        else start();
+      });
+
+      setActive(0);
+      start();
+    });
+  }
+
+  initModelSliders();
+
   var form = document.querySelector("[data-inquiry]");
   if (!form) return;
 

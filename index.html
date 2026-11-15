@@ -171,7 +171,7 @@
 
     <!--
       BRENDOVI — lako preimenovanje
-      Da promijenite brend, uredite karticu s data-brand (naslov i tekst).
+      Da promijenite brend, uredite blok s data-brand (naslov i tekst).
       Isto ime potražite u README.md.
     -->
     <section class="section" id="brendovi" aria-labelledby="brendovi-naslov">
@@ -181,34 +181,351 @@
           <p>Tesla, Toshiba, Haier i Maxon. Za cijenu uređaja s montažom pošaljite upit ili nazovite.</p>
         </div>
         <div class="brands">
-          <article class="brand-card" data-brand="tesla">
-            <span class="brand-card__rule" aria-hidden="true"></span>
-            <h3>Tesla</h3>
-            <p>Klima uređaji brenda Tesla za stan i manje poslovne prostore. Točan model dogovaramo u ponudi.</p>
-            <p class="brand-card__price">Cijena na upit</p>
-            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Tesla</a>
+
+          <article class="brand-block" data-brand="tesla" id="brend-tesla">
+            <div class="brand-block__intro">
+              <span class="brand-card__rule" aria-hidden="true"></span>
+              <h3>Tesla</h3>
+              <p>Klima uređaji brenda Tesla za stan i manje poslovne prostore. Točan model dogovaramo u ponudi.</p>
+              <p class="brand-block__warranty">Jamstvo: 36 mjeseci.</p>
+              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Tesla</a>
+            </div>
+            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Tesla modeli">
+              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Tesla model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
+              </button>
+              <div class="model-slider__viewport">
+                <ul class="model-slider__track" data-model-track>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/tesla-ta36ffcl.webp" width="800" height="364" alt="Unutarnja jedinica Tesla Select TA36FFCL-1232IAW." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Classic/Select</p>
+                      <h4>TA36FFCL-1232IAW</h4>
+                      <p class="model-card__power">Hlađenje 3,4 kW</p>
+                      <p class="model-card__feat">A++/A+, Wi-Fi, I Feel, turbo način rada, protiv gljivica, inteligentno odmrzavanje, dodatni lizozimski filter.</p>
+                      <p class="model-card__warranty">36 mjeseci jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/tesla-tt37af.webp" width="800" height="364" alt="Unutarnja jedinica Tesla Virtuoso TT37AF-1232IAW s FreshAIR O2." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Virtuoso</p>
+                      <h4>TT37AF-1232IAW</h4>
+                      <p class="model-card__power">Hlađenje 3,63 kW</p>
+                      <p class="model-card__feat">A+++/A++, Wi-Fi, FreshAIR O2, HEPA filter, pametni senzor svjetla, pametni protok zraka, serija do -20 °C.</p>
+                      <p class="model-card__warranty">36 mjeseci jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/tesla-ta53fful.webp" width="800" height="352" alt="Unutarnja jedinica Tesla Select TA53FFUL-1832IAW." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Classic/Select</p>
+                      <h4>TA53FFUL-1832IAW</h4>
+                      <p class="model-card__power">Hlađenje 5,1 kW</p>
+                      <p class="model-card__feat">A++/A+, Wi-Fi, I Feel / Follow me, samodijagnoza, skriveni LED zaslon.</p>
+                      <p class="model-card__warranty">36 mjeseci jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/tesla-tt51tp81.webp" width="800" height="367" alt="Unutarnja jedinica Tesla Advance TT51TP81-1832IHWT." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Advance</p>
+                      <h4>TT51TP81-1832IHWT</h4>
+                      <p class="model-card__power">Hlađenje 5,2 kW</p>
+                      <p class="model-card__feat">A+++/A++, Wi-Fi, grijač vanjske jedinice, noćni režim, rad do -25 °C, pametni protok zraka, elektronički ekspanzijski ventil.</p>
+                      <p class="model-card__warranty">36 mjeseci jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/tesla-tt68tp21.webp" width="800" height="365" alt="Unutarnja jedinica Tesla TT68TP21-2432IAW." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Ambient-Style-Superior</p>
+                      <h4>TT68TP21-2432IAW</h4>
+                      <p class="model-card__power">Hlađenje 6,84 kW</p>
+                      <p class="model-card__feat">A++/A+, Wi-Fi, I Feel, turbo način rada, protiv gljivica, inteligentno odmrzavanje, dodatni ionizatorski filter.</p>
+                      <p class="model-card__warranty">36 mjeseci jamstva</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Tesla model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
+              </button>
+              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Tesla modela"></div>
+            </div>
           </article>
-          <article class="brand-card" data-brand="toshiba">
-            <span class="brand-card__rule" aria-hidden="true"></span>
-            <h3>Toshiba</h3>
-            <p>Klima uređaji brenda Toshiba. Odabir ovisi o prostoru i načinu korištenja.</p>
-            <p class="brand-card__price">Cijena na upit</p>
-            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Toshiba</a>
+
+          <article class="brand-block" data-brand="toshiba" id="brend-toshiba">
+            <div class="brand-block__intro">
+              <span class="brand-card__rule" aria-hidden="true"></span>
+              <h3>Toshiba</h3>
+              <p>Klima uređaji brenda Toshiba. Odabir ovisi o prostoru i načinu korištenja.</p>
+              <p class="brand-block__warranty">Jamstvo: 3 godine.</p>
+              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Toshiba</a>
+            </div>
+            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Toshiba modeli">
+              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Toshiba model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
+              </button>
+              <div class="model-slider__viewport">
+                <ul class="model-slider__track" data-model-track>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="800" height="490" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">DaiSeiKai 10 Wood</p>
+                      <h4>RAS-B10S4KVDG-E</h4>
+                      <p class="model-card__power">Hlađenje 2,5 kW</p>
+                      <p class="model-card__feat">A+++/A+++, dizajn od drva jasena, filtar za prašinu, plazma ionizator, filtar Ultra Pure, serijski ugrađen Wi-Fi, nadzor potrošnje, HADA careflow, Smart Sensing.</p>
+                      <p class="model-card__warranty">3 godine jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="800" height="490" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">DaiSeiKai 10 Wood</p>
+                      <h4>RAS-B13S4KVDG-E</h4>
+                      <p class="model-card__power">Hlađenje 3,5 kW</p>
+                      <p class="model-card__feat">A+++/A+++, dizajn od drva jasena, filtar za prašinu, plazma ionizator, filtar Ultra Pure, serijski ugrađen Wi-Fi, nadzor potrošnje, HADA careflow, Smart Sensing.</p>
+                      <p class="model-card__warranty">3 godine jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/toshiba-daiseikai-10-wood.webp" width="800" height="490" alt="Unutarnja jedinica Toshiba DaiSeiKai 10 Wood." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">DaiSeiKai 10 Wood</p>
+                      <h4>RAS-B18S4KVDG-E</h4>
+                      <p class="model-card__power">Hlađenje 5,0 kW</p>
+                      <p class="model-card__feat">A+++/A+++, dizajn od drva jasena, filtar za prašinu, plazma ionizator, filtar Ultra Pure, serijski ugrađen Wi-Fi, nadzor potrošnje, HADA careflow, Smart Sensing.</p>
+                      <p class="model-card__warranty">3 godine jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/toshiba-shorai-edge-black.webp" width="800" height="385" alt="Unutarnja jedinica Toshiba Shorai Edge Black." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Shorai Edge Black</p>
+                      <h4>RAS-B24G3KVSGB-E</h4>
+                      <p class="model-card__power">Hlađenje 7,0 kW</p>
+                      <p class="model-card__feat">A++/A+, serijski ugrađen Wi-Fi, filtar Ultra Pure, hibridna inverterska tehnologija, funkcija 3D, tihi način rada.</p>
+                      <p class="model-card__warranty">3 godine jamstva</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Toshiba model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
+              </button>
+              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Toshiba modela"></div>
+            </div>
           </article>
-          <article class="brand-card" data-brand="haier">
-            <span class="brand-card__rule" aria-hidden="true"></span>
-            <h3>Haier</h3>
-            <p>Klima uređaji brenda Haier za dom i poslovni prostor. Točan model dogovaramo u ponudi.</p>
-            <p class="brand-card__price">Cijena na upit</p>
-            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Haier</a>
+
+          <article class="brand-block" data-brand="haier" id="brend-haier">
+            <div class="brand-block__intro">
+              <span class="brand-card__rule" aria-hidden="true"></span>
+              <h3>Haier</h3>
+              <p>Klima uređaji brenda Haier za dom i poslovni prostor. Točan model dogovaramo u ponudi.</p>
+              <p class="brand-block__warranty">Jamstvo: 5 (3+2) godina.</p>
+              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Haier</a>
+            </div>
+            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Haier modeli">
+              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Haier model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
+              </button>
+              <div class="model-slider__viewport">
+                <ul class="model-slider__track" data-model-track>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-revive-plus.webp" width="800" height="348" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Revive Plus</p>
+                      <h4>AS25RBAHRA-PL</h4>
+                      <p class="model-card__power">Hlađenje 2,7 kW</p>
+                      <p class="model-card__feat">A++/A+, 3D ispuh zraka, I Feel, Coanda protok zraka, održavanje temperature 10 °C, grijanje do -15 °C, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-flexis-plus-crna.webp" width="800" height="346" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Flexis Plus crna mat</p>
+                      <h4>AS25S2SF1FA-BH</h4>
+                      <p class="model-card__power">Hlađenje 2,6 kW</p>
+                      <p class="model-card__feat">A+++/A++, UVC, 56 °C sterilizacija, ECO senzor, I Feel, 3D ispuh zraka, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-revive-plus.webp" width="800" height="348" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Revive Plus</p>
+                      <h4>AS35RBAHRA-PL</h4>
+                      <p class="model-card__power">Hlađenje 3,5 kW</p>
+                      <p class="model-card__feat">A++/A+, 3D ispuh zraka, I Feel, Coanda protok zraka, održavanje temperature 10 °C, grijanje do -15 °C, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-expert-nordic.webp" width="800" height="335" alt="Unutarnja jedinica Haier Expert Nordic." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Expert Nordic</p>
+                      <h4>AS35XCHHRA-NR</h4>
+                      <p class="model-card__power">Hlađenje 3,5 kW</p>
+                      <p class="model-card__feat">A+++/A+++, grijanje do -30 °C, UVC Pro, ECO senzor, Easy to Clean, 3D ispuh zraka, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-revive-plus.webp" width="800" height="348" alt="Unutarnja jedinica Haier Revive Plus." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Revive Plus</p>
+                      <h4>AS50RCBHRA-PL</h4>
+                      <p class="model-card__power">Hlađenje 4,8 kW</p>
+                      <p class="model-card__feat">A++/A+, 3D ispuh zraka, I Feel, Coanda protok zraka, održavanje temperature 10 °C, grijanje do -15 °C, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-flexis-plus-crna.webp" width="800" height="346" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Flexis Plus crna mat</p>
+                      <h4>AS50S2SF1FA-BH</h4>
+                      <p class="model-card__power">Hlađenje 5,2 kW</p>
+                      <p class="model-card__feat">A++/A++, UVC, 56 °C sterilizacija, ECO senzor, I Feel, 3D ispuh zraka, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-pearl-premium.webp" width="800" height="406" alt="Unutarnja jedinica Haier Pearl Premium." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Pearl Premium</p>
+                      <h4>AS71PEPHRA-PRE</h4>
+                      <p class="model-card__power">Hlađenje 7,1 kW</p>
+                      <p class="model-card__feat">A+++/A++, grijanje do -25 °C, UVC Pro, 56 °C sterilizacija, 3D ispuh zraka, I Feel, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/haier-flexis-plus-crna.webp" width="800" height="346" alt="Unutarnja jedinica Haier Flexis Plus, crna mat." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Flexis Plus crna mat</p>
+                      <h4>AS71S2SF1FA-BH</h4>
+                      <p class="model-card__power">Hlađenje 7,0 kW</p>
+                      <p class="model-card__feat">A++/A+, UVC, 56 °C sterilizacija, ECO senzor, I Feel, 3D ispuh zraka, Wi-Fi.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Haier model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
+              </button>
+              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Haier modela"></div>
+            </div>
           </article>
-          <article class="brand-card" data-brand="maxon">
-            <span class="brand-card__rule" aria-hidden="true"></span>
-            <h3>Maxon</h3>
-            <p>Klima uređaji brenda Maxon. Detalje šaljemo uz ponudu, ne na ovoj stranici.</p>
-            <p class="brand-card__price">Cijena na upit</p>
-            <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Maxon</a>
+
+          <article class="brand-block" data-brand="maxon" id="brend-maxon">
+            <div class="brand-block__intro">
+              <span class="brand-card__rule" aria-hidden="true"></span>
+              <h3>Maxon</h3>
+              <p>Klima uređaji brenda Maxon. Detalje šaljemo uz ponudu, ne na ovoj stranici.</p>
+              <p class="brand-block__warranty">Jamstvo: 5 (3+2) godina, uz registraciju.</p>
+              <a class="link" href="#kontakt" data-tema="Prodaja">Pošaljite upit o brendu Maxon</a>
+            </div>
+            <div class="model-slider" data-model-slider aria-roledescription="vrtuljak" aria-label="Maxon modeli">
+              <button class="model-slider__btn model-slider__btn--prev" type="button" data-model-prev aria-label="Prethodni Maxon model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 4.5L8 12l7.5 7.5 1.5-1.5L11 12l6-6z"/></svg>
+              </button>
+              <div class="model-slider__viewport">
+                <ul class="model-slider__track" data-model-track>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Fresh</p>
+                      <h4>MXI-09HC013i</h4>
+                      <p class="model-card__power">Hlađenje 2,6 kW</p>
+                      <p class="model-card__feat">A++/A+, SEER 7,0, SCOP 4,1, Wi-Fi, I Feel, ionizator, I-Remote, ECO način rada, noćni rad.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva, uz registraciju</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Fresh</p>
+                      <h4>MXI-12HC013i</h4>
+                      <p class="model-card__power">Hlađenje 3,5 kW</p>
+                      <p class="model-card__feat">A++/A+, SEER 6,5, SCOP 4,1, Wi-Fi, I Feel, ionizator, I-Remote, ECO način rada, noćni rad.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva, uz registraciju</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Fresh</p>
+                      <h4>MXI-18HC012i</h4>
+                      <p class="model-card__power">Hlađenje 5,2 kW</p>
+                      <p class="model-card__feat">A++/A+, SEER 7,4, SCOP 4,0, Wi-Fi, I Feel, ionizator, I-Remote, ECO način rada, noćni rad.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva, uz registraciju</p>
+                    </div>
+                  </li>
+                  <li class="model-card">
+                    <figure class="model-card__photo">
+                      <img src="images/models/maxon-fresh.webp" width="800" height="352" alt="Unutarnja jedinica Maxon Fresh." loading="lazy">
+                    </figure>
+                    <div class="model-card__body">
+                      <p class="model-card__series">Fresh</p>
+                      <h4>MXI-24HC012i</h4>
+                      <p class="model-card__power">Hlađenje 7,0 kW</p>
+                      <p class="model-card__feat">A++/A+, SEER 6,1, SCOP 4,0, Wi-Fi, I Feel, ionizator, I-Remote, ECO način rada, noćni rad.</p>
+                      <p class="model-card__warranty">5 (3+2) godina jamstva, uz registraciju</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button class="model-slider__btn model-slider__btn--next" type="button" data-model-next aria-label="Sljedeći Maxon model">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.5 4.5L16 12l-7.5 7.5L7 18l6-6-6-6z"/></svg>
+              </button>
+              <div class="model-slider__dots" data-model-dots role="group" aria-label="Odabir Maxon modela"></div>
+            </div>
           </article>
+
         </div>
       </div>
     </section>
